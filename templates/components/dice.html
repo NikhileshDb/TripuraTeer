@@ -1,0 +1,122 @@
+<div class="flex flex-row w-[50%]">
+    <div class="container">
+        <div class="cube" id="cube">
+            <div class="front">
+                <span class="fas fa-circle"></span>
+            </div>
+            <div class="back">
+                    <!-- i use pre tag to align dots -->
+                    <pre class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre><br>
+                    <pre class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+            </div>
+            <div class="top">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+            </div>
+            <div class="left">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+    
+            </div>
+            <div class="right">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+    
+            </div>
+            <div class="bottom">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+    
+            </div>
+        </div>
+    </div>
+
+    <!-- another -->
+
+    <div class="container hidden">
+        <div class="cube" id="cube1">
+            <div class="front">
+                <span class="fas fa-circle"></span>
+            </div>
+            <div class="back">
+                    <!-- i use pre tag to align dots -->
+                    <pre class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre><br>
+                    <pre class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+            </div>
+            <div class="top">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+            </div>
+            <div class="left">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+    
+            </div>
+            <div class="right">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+    
+            </div>
+            <div class="bottom">
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+                <span class="fas fa-circle"></span>
+    
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+
+
+
+<script type="text/javascript">
+    let cube = document.getElementById('cube');
+    let cube1 = document.getElementById('cube1')
+
+    angleArray = [[0,0,0],[-310,-362,-38],[-400,-320,-2],[135,-217,-88],[-224,-317,5],[-47,-219,-81],[-133,-360,-53]];
+    //this array of degree that show the deffrent number 1 2 3 4 5 6 on cube ie
+    cube.addEventListener('click',function(e){
+
+        /*ANIMATION */
+        cube.style.animation = 'animate 1.4s linear';
+
+        const randomAngle = Math.floor(Math.random() * 6) + 1;
+        //console.log(randomAngle);
+        cube.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+        cube.style.transition = '1s linear'
+
+        cube.addEventListener('animationend',function(e){
+            cube.style.animation = '';
+        });
+    });
+
+    // Another
+
+    cube1.addEventListener('click',function(e){
+
+        /*ANIMATION */
+        cube1.style.animation = 'animate 1.4s linear';
+
+        const randomAngle = Math.floor(Math.random() * 6) + 1;
+        //console.log(randomAngle);
+        cube1.style.transform = 'rotateX('+angleArray[randomAngle][0]+'deg) rotateY('+angleArray[randomAngle][1]+'deg) rotateZ('+angleArray[randomAngle][2]+'deg)';
+        cube1.style.transition = '1s linear'
+
+        cube1.addEventListener('animationend',function(e){
+            cube1.style.animation = '';
+        });
+        });
+</script>

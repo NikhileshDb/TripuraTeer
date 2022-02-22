@@ -1,0 +1,79 @@
+{% extends '../base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="relative bg-[url('../../static/images/bg.png')] bg-cover h-[500px] w-full">
+    <!-- overlay -->
+    <div class="absolute  h-full w-full bg-[#2f0327e0]">
+        <div class="flex flex-row justify-evenly  px-10 ">
+            <div>
+                <h1 class="text-[60px]  text-white pt-[150px] font-semibold ">Play <span
+                        class="font-bold text-[#d58107] ">Tripura Teer</span> Game <br> & Win Money <br> Unlimited</h1>
+                <!-- <button class="text-[34px] text-white font-semibold mt-[20px] px-8 shadow-lg hover:shadow-lg hover:bg-[#d58107] py-1 rounded-lg bg-[#d58107]">Results</button> -->
+            </div>
+            <img class="" width="750" src="{% static 'images/thumb.png' %}" alt="rollete_wheel">
+        </div>
+    </div>
+    <img width="250" src="{% static 'images/card.png' %}" alt="ace_card">
+</div>
+
+<div class="h-screen w-full mt-[60px]">
+    <h2 class="text-center shadow_blur font-bold text-[45px] uppercase text-[#d58107]">Today's Result</h2>
+    <div class="flex flex-row justify-evenly mt-[40px]">
+        <div class="h-[500px] w-[500px] bg-[#35072b] flex flex-col justify-center items-center">
+
+            <!-- Result Number -->
+            <div id="first_round_heading" class="text-white text-2xl  ">FIRST ROUND</div>
+            <div id="firstRoundResult" class="shadow_blur  text-[200px] text-white font-bold">16</div>
+            <div id="first_round_time" class="text-white ">Wed Feb 23 2022 04:00:00 GMT+0530 (India Standard Time)</div>
+            <!-- Display Timer -->
+            <div class=" flex-col 1st-round hidden">
+                <div id="count_down" class=" flex flex-row justify-center items-center space-x-2">
+                    <div id="1sthour0">0</div>
+                    <div id="1sthour1">0</div>
+                    <div>:</div>
+                    <div id="1stmin0">0</div>
+                    <div id="1stmin1">0</div>
+                    <div>:</div>
+                    <div id="1stsec2">0</div>
+                    <div id="1stsec02">0</div>
+                </div>
+            </div>
+            <!-- Display  Waiting-->
+            <div id="1stwaiting_message" class="hidden text-white text-[24px] font-bold">Loading ..</div>
+
+
+
+        </div>
+
+        <div class="h-[500px] shadow-xl w-[500px] bg-[#35072b] py-10 flex flex-col justify-center items-center">
+            <!-- Result Number -->
+            <div id="sec_round_heading" class="text-white text-2xl  hidden">SECOND ROUND</div>
+            <div id="secondRoundResult" class="shadow_blur hidden text-[200px] text-white font-bold"></div>
+            <div id="second_round_time" class="text-white hidden"></div>
+            <!-- Display Timer -->
+            <div class="flex flex-col 2nd-round">
+                <div id="count_down" class=" flex flex-row justify-center items-center space-x-2">
+                    <div id="2ndhour0">0</div>
+                    <div id="2ndhour1">0</div>
+                    <div>:</div>
+                    <div id="2ndmin0">0</div>
+                    <div id="2ndmin1">0</div>
+                    <div>:</div>
+                    <div id="2ndsec2">0</div>
+                    <div id="2ndsec02">0</div>
+                </div>
+            </div>
+            <!-- Display  Waiting-->
+            <div id="waiting_message" class="hidden text-white text-[24px] font-bold">Loading ..</div>
+
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+{% endblock %}
