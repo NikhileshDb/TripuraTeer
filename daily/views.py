@@ -4,7 +4,7 @@ from .models import DailyResult
 
 # Create your views here.
 def DailyHomePage(request):
-    result = DailyResult.objects.all()
+    result = DailyResult.objects.all().order_by('-id')
     context = {
         'result': result
     }

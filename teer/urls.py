@@ -7,7 +7,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('daily.urls')),
     path('sunday/', include('sunday.urls')),
-    path('wednesday', include('wednesday.urls')),
+    path('wednesday/', include('wednesday.urls')),
     path('api/', include('api_provider.api_urls')),
 ] 
 
