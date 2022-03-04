@@ -6,13 +6,11 @@ window.onload = () => {
             if (response.ok) {
                 return response.json();
             } else {
-                return {
-                    'Error': 'Something went wrong with the response'
-                }
+                return {'Error': 'Something went wrong with the response'}
             };
         })
         .then((data) => setCountDown(data))
-        .catch();
+        .catch(error => console.log(error));
 
 
     // Coudown for First Round
