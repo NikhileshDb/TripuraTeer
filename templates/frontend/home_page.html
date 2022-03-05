@@ -2,16 +2,16 @@
 {% load static %}
 {% block content %}
 
-<div class="relative bg-[url('../../static/images/bg.png')] bg-cover h-[500px] w-full">
+<div class="relative bg-[url('../../static/images/bg.png')] bg-cover h-[500px] sm:w-full">
     <!-- overlay -->
     <div class="absolute  h-full w-full bg-[#2f0327e0]">
         <div class="flex flex-row justify-evenly  px-10 ">
             <div>
-                <h1 class="text-[60px]  text-white pt-[150px] font-semibold ">Play <span
+                <h1 class="sm:text-[60px] text-[34px]  text-white pt-[150px] font-semibold ">Play <span
                         class="font-bold text-[#d58107] ">Tripura Teer</span> Game <br> & Win Money <br> Unlimited</h1>
                 <!-- <button class="text-[34px] text-white font-semibold mt-[20px] px-8 shadow-lg hover:shadow-lg hover:bg-[#d58107] py-1 rounded-lg bg-[#d58107]">Results</button> -->
             </div>
-            <img class="" width="750" src="{% static 'images/thumb.png' %}" alt="rollete_wheel">
+            <img class="hidden sm:block" width="750" src="{% static 'images/thumb.png' %}" alt="rollete_wheel">
         </div>
     </div>
     <img width="250" src="{% static 'images/card.png' %}" alt="ace_card">
@@ -19,16 +19,18 @@
 
 
 
+
 <!-- Today's Result Section -->
-<div class="w-full mt-[60px]">
-    <h2 class="text-center shadow_blur font-bold text-[45px] uppercase text-[#d58107]">Daily Game</h2>
-    <div class="flex flex-row justify-evenly mt-[40px]">
-        <div class="h-[500px] w-[500px] bg-[#35072b] flex flex-col justify-center items-center">
+<div class="w-full mt-[60px] relative">
+    <svg class="absolute sm:top-[10%] blur-lg bottom-0 sm:left-[10%] z-[-10] w-auto h-[300] sm:h-[1200px] stroke-0 fill-[#ecd50465] text-center" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224C273.7 224 288 238.3 288 256zM112 256C112 176.5 176.5 112 256 112C335.5 112 400 176.5 400 256C400 335.5 335.5 400 256 400C176.5 400 112 335.5 112 256zM256 336C300.2 336 336 300.2 336 256C336 211.8 300.2 176 256 176C211.8 176 176 211.8 176 256C176 300.2 211.8 336 256 336zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64C149.1 64 64 149.1 64 256C64 362 149.1 448 256 448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/></svg>
+    <h2 class="text-center shadow_blur font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Daily Game</h2>
+    <div class="flex flex-col gap-4  sm:flex-row justify-evenly mt-[40px]">
+        <div class="w-auto h-auto sm:h-[500px] sm:w-[500px] bg-[#35072b] py-2 flex flex-col justify-center items-center">
 
             <!-- Result Number -->
-            <div id="first_round_heading" class="text-white text-2xl  hidden">FIRST ROUND</div>
-            <div id="firstRoundResult" class="shadow_blur hidden text-[200px] text-white font-bold"></div>
-            <div id="first_round_time" class="text-white hidden">Wed Feb 23 2022 04:00:00 GMT+0530 (India Standard Time)
+            <div id="first_round_heading" class="text-white text-2xl p-2 hidden">FIRST ROUND</div>
+            <div id="firstRoundResult" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold"></div>
+            <div id="first_round_time" class="text-white hidden whitespace-normal p-2">
             </div>
             <!-- Display Timer -->
             <div class="flex-col 1st-round">
@@ -50,11 +52,11 @@
 
         </div>
 
-        <div class="h-[500px] shadow-xl w-[500px] bg-[#35072b] py-10 flex flex-col justify-center items-center">
+        <div class=" w-auto h-auto sm:h-[500px] shadow-xl sm:w-[500px] bg-[#35072b] py-2 flex flex-col justify-center items-center">
             <!-- Result Number -->
-            <div id="sec_round_heading" class="text-white text-2xl  hidden">SECOND ROUND</div>
-            <div id="secondRoundResult" class="shadow_blur hidden text-[200px] text-white font-bold"></div>
-            <div id="second_round_time" class="text-white hidden"></div>
+            <div id="sec_round_heading" class="text-white text-2xl p-2 hidden">SECOND ROUND</div>
+            <div id="secondRoundResult" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold"></div>
+            <div id="second_round_time" class="text-white hidden p-2 whitespace-normal"></div>
             <!-- Display Timer -->
             <div class="flex flex-col 2nd-round">
                 <div id="count_down" class=" flex flex-row justify-center items-center space-x-2">
@@ -79,8 +81,8 @@
 
 <!-- Daily Game Previous Results Here -->
 
-<div class="h-screen w-full px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[45px] uppercase text-[#d58107]">Daily Game History</h2>
+<div class="w-full sm:px-[20%]">
+    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Daily Game History</h2>
 
     <!-- table -->
     <div class="">
@@ -141,17 +143,17 @@
 
 <!-- Sunday's Result Section -->
 <div class="w-full mt-[60px]">
-    <h2 class="text-center shadow_blur font-bold text-[45px] uppercase text-[#d58107]">Sunday Game</h2>
+    <h2 class="text-center shadow_blur font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Sunday Game</h2>
     <div class="flex flex-row justify-evenly mt-[40px]">
-        <div class="h-[500px] w-[500px] bg-[#35072b] flex flex-col justify-center items-center">
+        <div class="h-auto w-full p-4 sm:h-[500px] sm:w-[500px] bg-[#35072b] flex flex-col justify-center items-center">
 
             <!-- Result Number -->
             <div id="sundayresultHeading" class="text-white text-2xl  hidden">WINNING NUMBER</div>
-            <div id="sundayResultNumber" class="shadow_blur hidden text-[200px] text-white font-bold"></div>
-            <div id="sunday_date_time" class="text-white hidden">Wed Feb 23 2022 04:00:00 GMT+0530 (India Standard Time)
+            <div id="sundayResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">45</div>
+            <div id="sunday_date_time" class="text-white text-center hidden">
             </div>
             <!-- Display Timer -->
-            <div class="flex-col sunday_result_timer_sction">
+            <div class="flex-col  sunday_result_timer_sction">
                 <div id="count_down" class="flex flex-row justify-center items-center space-x-2">
                     <div id="sundayhour0">0</div>
                     <div id="sundayhour1">0</div>
@@ -171,11 +173,11 @@
 
 <!-- Sunday Game Previous Results Here -->
 
-<div class="h-screen w-full px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[45px] uppercase text-[#d58107]">Sunday Game History</h2>
+<div class=" w-full sm:px-[20%]">
+    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Sunday Game History</h2>
 
     <!-- table -->
-    <div class="">
+    <div class="pb-20">
         <div>
             <!-- This example requires Tailwind CSS v2.0+ -->
             <div class="flex flex-col">
@@ -194,12 +196,15 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                 {% for daily in result|slice:':10' %}
+                                 {% for obj in sunday|slice:':10' %}
                                  <tr>
                                     <td class="px-6 py-4 whitespace-nowrap">
                                         <div class="flex items-center">
-                                            {{daily.first_round.result_time|date:'Y-m-d'}}
+                                            {{obj.result_time|date:'Y-m-d'}}
                                         </div>
+                                    </td>
+                                    <td class="px-6 py-4 whitespace-nowrap">
+                                        {{obj.winning_number}}
                                     </td>
                                 </tr>
                                  {% endfor %}
@@ -218,88 +223,6 @@
 
 </div>
 
-
-
-<!-- Wednesday Result Section -->
-<div class="w-full mt-[60px]">
-    <h2 class="text-center shadow_blur font-bold text-[45px] uppercase text-[#d58107]">Wednesday Game</h2>
-    <div class="flex flex-row justify-evenly mt-[40px]">
-        <div class="h-[500px] w-[500px] bg-[#35072b] flex flex-col justify-center items-center">
-
-            <!-- Result Number -->
-            <div id="first_round_heading" class="text-white text-2xl  hidden">FIRST ROUND</div>
-            <div id="firstRoundResult" class="shadow_blur hidden text-[200px] text-white font-bold"></div>
-            <div id="first_round_time" class="text-white hidden">Wed Feb 23 2022 04:00:00 GMT+0530 (India Standard Time)
-            </div>
-            <!-- Display Timer -->
-            <div class="flex-col 1st-round">
-                <div id="count_down" class="flex flex-row justify-center items-center space-x-2">
-                    <div id="1sthour0">0</div>
-                    <div id="1sthour1">0</div>
-                    <div>:</div>
-                    <div id="1stmin0">0</div>
-                    <div id="1stmin1">0</div>
-                    <div>:</div>
-                    <div id="1stsec0">0</div>
-                    <div id="1stsec1">0</div>
-                </div>
-            </div>
-            <!-- Display  Waiting-->
-            <div id="1stwaiting_message" class="hidden text-white text-[24px] font-bold">Loading ..</div>
-        </div>
-    </div>
-</div>
-
-<!-- Wednesday Game Previous Results Here -->
-
-<div class="h-screen w-full px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[45px] uppercase text-[#d58107]">Wednesday Game History</h2>
-
-    <!-- table -->
-    <div class="">
-        <div>
-            <!-- This example requires Tailwind CSS v2.0+ -->
-            <div class="flex flex-col">
-                <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
-                    <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
-                        <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
-                            <table class="min-w-full divide-y divide-gray-200">
-                                <thead class="bg-gray-50">
-                                    <tr>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Date</th>
-                                        <th scope="col"
-                                            class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                                            Winning Number</th>
-                                       
-
-                                    </tr>
-                                </thead>
-                                <tbody class="bg-white divide-y divide-gray-200">
-                                 {% for daily in result|slice:':10' %}
-                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            {{daily.first_round.result_time|date:'Y-m-d'}}
-                                        </div>
-                                    </td>
-                                </tr>
-                                 {% endfor %}
-
-                                    <!-- More people... -->
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-
-</div>
 
 
 {% endblock %}
