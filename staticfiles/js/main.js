@@ -1,19 +1,21 @@
 window.onload = () => {
-
-    // First Round
-    fetch('http://127.0.0.1:8000/api/first-round/')
+    const root_url = window.location.origin
+    // First Round Daily Game
+    fetch(`${root_url}/api/first-round/`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
             } else {
-                return {'Error': 'Something went wrong with the response'}
+                return {
+                    'Error': 'Something went wrong with the response'
+                }
             };
         })
         .then((data) => setCountDown(data))
         .catch(error => console.log(error));
 
 
-    // Coudown for First Round
+    // Countdown for First Round Daily Game
 
     const setCountDown = (data) => {
         // html elements
@@ -98,7 +100,8 @@ window.onload = () => {
                         firstRoundResultEl.textContent = `${winning_number}`;
                         firstRoundResultEl.classList.remove('hidden');
                         firstRoundResultTimeEl.classList.remove('hidden');
-                        firstRoundResultTimeEl.textContent = `${Date(data[0].result_time)}`;
+                        change_time_format = new Date(data[0].result_time);
+                        firstRoundResultTimeEl.innerHTML = change_time_format.toLocaleString();
                         firsRoundHeadingEl.classList.remove('hidden');
 
                     }
@@ -115,8 +118,8 @@ window.onload = () => {
 
 
 
-    // Second Round
-    fetch('http://127.0.0.1:8000/api/second-round/')
+    // Second Round Daily Game
+    fetch(`${root_url}/api/second-round/`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
@@ -191,7 +194,8 @@ window.onload = () => {
                             // displaying the date
                             var second_round_time = document.getElementById("second_round_time");
                             second_round_time.classList.remove('hidden');
-                            second_round_time.textContent = `${Date(data[0].result_time)}`;
+                         
+                            second_round_time.textContent = new Date(data[0].result_time).toLocaleString();
                             // displaying the heading
                             var sec_round_heading = document.getElementById("sec_round_heading");
                             sec_round_heading.classList.remove('hidden');
@@ -200,6 +204,108 @@ window.onload = () => {
                 }, 1000);
 
             },
-        )
+        ).catch(err => console.log(err));
+
+
+
+
+
+    //   Sunday Result Functionalities
+
+    fetch(`${root_url}/api/sunday-result/`)
+    .then(
+        (response) => {
+            if (response.ok){
+                return response.json();
+            } else {
+                return {"error": "Api fetch error"}
+            }
+        }
+    ).then((data)=>{
+        var sundayResultDateTime = new Date(data[0].result_time).getTime();
+        if(data[0].winning_number == null){
+            var sundayResult = "XX"; 
+        } else {
+            sundayResult = data[0].winning_number; 
+        }
+        
+        var x = setInterval(() => {
+
+            var now = new Date().getTime();
+
+            if (sundayResultDateTime < now) {
+                var sundayResultTimerDiv = document.getElementsByClassName("sunday_result_timer_sction");
+                sundayResultTimerDiv[0].classList.add('hidden');
+            }
+            var diff = sundayResultDateTime - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+            // breaking the times 
+            var nDays = diff / (1000 * 60 * 60 * 24);
+            var nHours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+            var nH0 = nHours / 10;
+            var nH1 = nHours % 10;
+            var nMinutes = (diff % (1000 * 60 * 60)) / (1000 * 60);
+            var nmin0 = nMinutes / 10;
+            var nmin1 = nMinutes % 10;
+            var nSeconds = (diff % (1000 * 60)) / 1000
+            var n0ten = nSeconds / 10
+            var n1ten = nSeconds % 10
+
+            // show the timer
+            document.getElementById("sundaysec0").innerText = Math.floor(n0ten);
+            document.getElementById("sundaysec1").innerText = Math.floor(n1ten);
+            document.getElementById("sundaymin0").innerText = Math.floor(nmin0);
+            document.getElementById("sundaymin1").innerText = Math.floor(nmin1);
+            document.getElementById("sundayhour0").innerText = Math.floor(nH0);
+            document.getElementById("sundayhour1").innerText = Math.floor(nH1);
+            // changing the heading of the card 
+            var sundayresultHeading = document.getElementById("sundayresultHeading");
+            sundayresultHeading.textContent = 'TIME REMAINING'; 
+            if(diff <= 0){
+                clearInterval(x);
+                sundayResultTimerDiv[0].classList.add('hidden');
+                sundayresultHeading.classList.add('hidden'); 
+                if(sundayResult == 'XX'){
+                    // Show something waitin 
+                    var waiting_message = document.getElementById('sundayWaitingMessage');
+                    waiting_message.classList.remove('hidden');
+               } else {
+                      // displaying the winning number
+                      sundayresultHeading.classList.remove('hidden');
+                      sundayresultHeading.textContent = 'WINNING NUMBER'; 
+                      var sundayResultNumber = document.getElementById("sundayResultNumber");
+                      sundayResultNumber.classList.remove('hidden');
+                      sundayResultNumber.textContent = `${sundayResult}`;
+                      // displaying the date
+                      var sunday_date_time = document.getElementById("sunday_date_time");
+                      sunday_date_time.classList.remove('hidden');
+                   
+                      sunday_date_time.textContent = new Date(data[0].result_time).toLocaleString();
+                      // displaying the heading
+                   //    var sec_round_heading = document.getElementById("sec_round_heading");
+                   //    sec_round_heading.classList.remove('hidden');
+               }
+                
+            }
+
+         
+
+        }, 1000);
+        
+    })
+
+
+    
+
+
+
+
+
 
 }

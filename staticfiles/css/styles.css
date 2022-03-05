@@ -502,18 +502,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 }
 
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 .static {
   position: static;
 }
@@ -526,13 +514,65 @@ Ensure the default browser behavior of the `hidden` attribute.
   position: relative;
 }
 
+.right-\[40\%\] {
+  right: 40%;
+}
+
+.right-\[50\%\] {
+  right: 50%;
+}
+
+.left-0 {
+  left: 0px;
+}
+
+.right-0 {
+  right: 0px;
+}
+
+.top-0 {
+  top: 0px;
+}
+
+.bottom-0 {
+  bottom: 0px;
+}
+
+.top-1\/2 {
+  top: 50%;
+}
+
+.left-1\/2 {
+  left: 50%;
+}
+
+.top-1\/3 {
+  top: 33.333333%;
+}
+
+.left-1\/3 {
+  left: 33.333333%;
+}
+
+.top-1\/4 {
+  top: 25%;
+}
+
+.top-\[0\%\] {
+  top: 0%;
+}
+
+.z-\[100\] {
+  z-index: 100;
+}
+
+.z-\[-10\] {
+  z-index: -10;
+}
+
 .-my-2 {
   margin-top: -0.5rem;
   margin-bottom: -0.5rem;
-}
-
-.mt-\[20px\] {
-  margin-top: 20px;
 }
 
 .mt-\[60px\] {
@@ -543,8 +583,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 40px;
 }
 
-.ml-4 {
-  margin-left: 1rem;
+.mt-\[20px\] {
+  margin-top: 20px;
 }
 
 .block {
@@ -559,12 +599,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: flex;
 }
 
-.inline-flex {
-  display: inline-flex;
-}
-
 .table {
   display: table;
+}
+
+.contents {
+  display: contents;
 }
 
 .hidden {
@@ -579,16 +619,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 100%;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-\[50px\] {
   height: 50px;
 }
 
-.h-screen {
-  height: 100vh;
-}
-
-.h-10 {
-  height: 2.5rem;
+.h-\[300\] {
+  height: 300;
 }
 
 .w-\[50\%\] {
@@ -603,20 +643,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 500px;
 }
 
+.w-3\/12 {
+  width: 25%;
+}
+
+.w-auto {
+  width: auto;
+}
+
 .w-\[300px\] {
   width: 300px;
 }
 
-.w-10 {
-  width: 2.5rem;
-}
-
 .min-w-full {
   min-width: 100%;
-}
-
-.flex-shrink-0 {
-  flex-shrink: 0;
 }
 
 .transform {
@@ -651,12 +691,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   justify-content: space-evenly;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-10 {
   gap: 2.5rem;
 }
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]) {
@@ -684,16 +732,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   overflow-x: auto;
 }
 
+.whitespace-normal {
+  white-space: normal;
+}
+
 .whitespace-nowrap {
   white-space: nowrap;
 }
 
-.rounded-lg {
-  border-radius: 0.5rem;
+.rounded {
+  border-radius: 0.25rem;
 }
 
-.rounded-full {
-  border-radius: 9999px;
+.rounded-lg {
+  border-radius: 0.5rem;
 }
 
 .border-b {
@@ -703,25 +755,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-gray-200 {
   --tw-border-opacity: 1;
   border-color: rgb(229 231 235 / var(--tw-border-opacity));
-}
-
-.bg-\[\#2f0327e0\] {
-  background-color: #2f0327e0;
-}
-
-.bg-\[\#d58107\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(213 129 7 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#35072b\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(53 7 43 / var(--tw-bg-opacity));
-}
-
-.bg-\[\#320428\] {
-  --tw-bg-opacity: 1;
-  background-color: rgb(50 4 40 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
@@ -734,51 +767,109 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-green-100 {
+.bg-\[\#35072b\] {
   --tw-bg-opacity: 1;
-  background-color: rgb(220 252 231 / var(--tw-bg-opacity));
+  background-color: rgb(53 7 43 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#320428\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(50 4 40 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#2f0327e0\] {
+  background-color: #2f0327e0;
+}
+
+.bg-\[\#d58107\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(213 129 7 / var(--tw-bg-opacity));
+}
+
+.bg-gradient-to-r {
+  background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
 
 .bg-\[url\(\'\.\.\/\.\.\/static\/images\/bg\.png\'\)\] {
   background-image: url('../../static/images/bg.png');
 }
 
+.from-\[\#320428\] {
+  --tw-gradient-from: #320428;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(50 4 40 / 0));
+}
+
+.via-\[\#800765\] {
+  --tw-gradient-stops: var(--tw-gradient-from), #800765, var(--tw-gradient-to, rgb(128 7 101 / 0));
+}
+
+.to-\[\#320428\] {
+  --tw-gradient-to: #320428;
+}
+
 .bg-cover {
   background-size: cover;
 }
 
-.p-20 {
-  padding: 5rem;
+.fill-\[\#d58107\] {
+  fill: #d58107;
 }
 
-.px-10 {
-  padding-left: 2.5rem;
-  padding-right: 2.5rem;
+.fill-cyan-500 {
+  fill: #06b6d4;
 }
 
-.px-8 {
-  padding-left: 2rem;
-  padding-right: 2rem;
+.fill-\[\#\#c51b0b\] {
+  fill: ##c51b0b;
 }
 
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
+.fill-\[\#c51b0b\] {
+  fill: #c51b0b;
 }
 
-.py-10 {
-  padding-top: 2.5rem;
-  padding-bottom: 2.5rem;
+.fill-\[\#c51b0b71\] {
+  fill: #c51b0b71;
 }
 
-.px-\[50px\] {
-  padding-left: 50px;
-  padding-right: 50px;
+.fill-\[\#3c0d2f\] {
+  fill: #3c0d2f;
 }
 
-.py-\[10px\] {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.fill-\[\#3c0d2f83\] {
+  fill: #3c0d2f83;
+}
+
+.fill-\[\#93ec049d\] {
+  fill: #93ec049d;
+}
+
+.fill-\[\#ecd50465\] {
+  fill: #ecd50465;
+}
+
+.stroke-cyan-500 {
+  stroke: #06b6d4;
+}
+
+.stroke-0 {
+  stroke-width: 0;
+}
+
+.p-2 {
+  padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
+.p-4 {
+  padding: 1rem;
+}
+
+.px-\[20\%\] {
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .py-\[50px\] {
@@ -811,22 +902,60 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-right: 0.5rem;
 }
 
-.px-\[20\%\] {
-  padding-left: 20%;
-  padding-right: 20%;
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
-.px-\[20px\] {
-  padding-left: 20px;
-  padding-right: 20px;
+.px-20 {
+  padding-left: 5rem;
+  padding-right: 5rem;
+}
+
+.px-10 {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+}
+
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+
+.px-\[50px\] {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.py-\[10px\] {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.pt-10 {
+  padding-top: 2.5rem;
+}
+
+.pb-2 {
+  padding-bottom: 0.5rem;
 }
 
 .pt-\[150px\] {
   padding-top: 150px;
 }
 
-.pt-\[100px\] {
-  padding-top: 100px;
+.pb-20 {
+  padding-bottom: 5rem;
 }
 
 .text-left {
@@ -837,24 +966,17 @@ Ensure the default browser behavior of the `hidden` attribute.
   text-align: center;
 }
 
-.text-right {
-  text-align: right;
-}
-
 .align-middle {
   vertical-align: middle;
 }
 
-.text-\[60px\] {
-  font-size: 60px;
-}
-
-.text-\[34px\] {
-  font-size: 34px;
-}
-
 .text-\[45px\] {
   font-size: 45px;
+}
+
+.text-xs {
+  font-size: 0.75rem;
+  line-height: 1rem;
 }
 
 .text-2xl {
@@ -870,18 +992,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-size: 24px;
 }
 
-.text-xs {
-  font-size: 0.75rem;
-  line-height: 1rem;
+.text-\[2\.7rem\] {
+  font-size: 2.7rem;
 }
 
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
+.text-\[34px\] {
+  font-size: 34px;
 }
 
-.font-semibold {
-  font-weight: 600;
+.text-\[100px\] {
+  font-size: 100px;
+}
+
+.text-\[1\.7rem\] {
+  font-size: 1.7rem;
 }
 
 .font-bold {
@@ -892,21 +1016,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 500;
 }
 
+.font-semibold {
+  font-weight: 600;
+}
+
 .uppercase {
   text-transform: uppercase;
 }
 
-.leading-5 {
-  line-height: 1.25rem;
-}
-
 .tracking-wider {
   letter-spacing: 0.05em;
-}
-
-.text-white {
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .text-\[\#d58107\] {
@@ -919,19 +1038,20 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
-.text-gray-900 {
+.text-white {
   --tw-text-opacity: 1;
-  color: rgb(17 24 39 / var(--tw-text-opacity));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.text-green-800 {
+.text-gray-700 {
   --tw-text-opacity: 1;
-  color: rgb(22 101 52 / var(--tw-text-opacity));
+  color: rgb(55 65 81 / var(--tw-text-opacity));
 }
 
-.text-indigo-600 {
-  --tw-text-opacity: 1;
-  color: rgb(79 70 229 / var(--tw-text-opacity));
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .shadow-lg {
@@ -946,10 +1066,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.shadow {
-  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+.blur-lg {
+  --tw-blur: blur(16px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.blur-sm {
+  --tw-blur: blur(4px);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
 .transition {
@@ -971,6 +1095,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: white;
   font-weight: bold;
   text-shadow: 1px 1px 20px  black ;
+}
+
+@media only screen and (max-width:600px){
+  #count_down div {
+    font-size:34px;
+  }
 }
 
 /* My Dice Css Styles */
@@ -1149,21 +1279,117 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(213 129 7 / var(--tw-bg-opacity));
 }
 
-.hover\:text-indigo-900:hover {
-  --tw-text-opacity: 1;
-  color: rgb(49 46 129 / var(--tw-text-opacity));
-}
-
 .hover\:shadow-lg:hover {
   --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
 @media (min-width: 640px) {
+  .sm\:top-1\/4 {
+    top: 25%;
+  }
+
+  .sm\:left-1\/3 {
+    left: 33.333333%;
+  }
+
+  .sm\:left-1\/2 {
+    left: 50%;
+  }
+
+  .sm\:left-1\/4 {
+    left: 25%;
+  }
+
+  .sm\:left-2\/4 {
+    left: 50%;
+  }
+
+  .sm\:left-\[35\%\] {
+    left: 35%;
+  }
+
+  .sm\:left-\[40\%\] {
+    left: 40%;
+  }
+
+  .sm\:top-\[30\%\] {
+    top: 30%;
+  }
+
+  .sm\:left-\[30\%\] {
+    left: 30%;
+  }
+
+  .sm\:left-\[10\%\] {
+    left: 10%;
+  }
+
+  .sm\:top-\[10\%\] {
+    top: 10%;
+  }
+
   .sm\:-mx-6 {
     margin-left: -1.5rem;
     margin-right: -1.5rem;
+  }
+
+  .sm\:block {
+    display: block;
+  }
+
+  .sm\:hidden {
+    display: none;
+  }
+
+  .sm\:h-\[500px\] {
+    height: 500px;
+  }
+
+  .sm\:h-\[300px\] {
+    height: 300px;
+  }
+
+  .sm\:h-\[800px\] {
+    height: 800px;
+  }
+
+  .sm\:h-\[1000px\] {
+    height: 1000px;
+  }
+
+  .sm\:h-\[1200px\] {
+    height: 1200px;
+  }
+
+  .sm\:w-2\/3 {
+    width: 66.666667%;
+  }
+
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:w-\[500px\] {
+    width: 500px;
+  }
+
+  .sm\:w-3\/12 {
+    width: 25%;
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:flex-col {
+    flex-direction: column;
   }
 
   .sm\:rounded-lg {
@@ -1173,6 +1399,27 @@ Ensure the default browser behavior of the `hidden` attribute.
   .sm\:px-6 {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .sm\:px-\[20\%\] {
+    padding-left: 20%;
+    padding-right: 20%;
+  }
+
+  .sm\:text-\[60px\] {
+    font-size: 60px;
+  }
+
+  .sm\:text-\[45px\] {
+    font-size: 45px;
+  }
+
+  .sm\:text-\[200px\] {
+    font-size: 200px;
+  }
+
+  .sm\:text-\[2\.7rem\] {
+    font-size: 2.7rem;
   }
 }
 
