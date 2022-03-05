@@ -204,7 +204,11 @@
                                         </div>
                                     </td>
                                     <td class="px-6 py-4 whitespace-nowrap">
+                                        {% if obj.winning_number == None %}
+                                         Not yet published
+                                        {% else %}
                                         {{obj.winning_number}}
+                                        {% endif %}
                                     </td>
                                 </tr>
                                  {% endfor %}
