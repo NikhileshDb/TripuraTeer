@@ -30,7 +30,7 @@ choice = (
 class DailyResult(models.Model):
     first_round = models.OneToOneField(FirstRound, on_delete=models.CASCADE, null=True)
     second_round = models.OneToOneField(SecondRound, on_delete=models.CASCADE, null=True)
-    published = models.CharField(max_length=10, choices = choice, null=True, blank=True)
+    status = models.CharField(max_length=10, choices = choice, null=True, blank=True)
 
     def __str__(self):
         return str(self.first_round.result_time.strftime("%d/%m/%y")) + "   [" + str(self.first_round.winning_number) + "/" + str(self.second_round.winning_number) + "]" 
