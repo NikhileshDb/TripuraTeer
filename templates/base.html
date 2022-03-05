@@ -13,7 +13,9 @@
 <body>
     {% include 'frontend/nav_bar.html' %}
     {% block content %}
+    <!-- main body contents -->
     {% endblock %}
+    {% include 'frontend/footer.html' %}
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
 </body>
 </html>
