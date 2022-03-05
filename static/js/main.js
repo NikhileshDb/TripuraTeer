@@ -264,31 +264,37 @@ window.onload = () => {
             document.getElementById("sundaymin1").innerText = Math.floor(nmin1);
             document.getElementById("sundayhour0").innerText = Math.floor(nH0);
             document.getElementById("sundayhour1").innerText = Math.floor(nH1);
-
-            if(diff < 0){
+            // changing the heading of the card 
+            var sundayresultHeading = document.getElementById("sundayresultHeading");
+            sundayresultHeading.textContent = 'TIME REMAINING'; 
+            if(diff <= 0){
                 clearInterval(x);
                 sundayResultTimerDiv[0].classList.add('hidden');
+                sundayresultHeading.classList.add('hidden'); 
+                if(sundayResult == 'XX'){
+                    // Show something waitin 
+                    var waiting_message = document.getElementById('sundayWaitingMessage');
+                    waiting_message.classList.remove('hidden');
+               } else {
+                      // displaying the winning number
+                      sundayresultHeading.classList.remove('hidden');
+                      sundayresultHeading.textContent = 'WINNING NUMBER'; 
+                      var sundayResultNumber = document.getElementById("sundayResultNumber");
+                      sundayResultNumber.classList.remove('hidden');
+                      sundayResultNumber.textContent = `${sundayResult}`;
+                      // displaying the date
+                      var sunday_date_time = document.getElementById("sunday_date_time");
+                      sunday_date_time.classList.remove('hidden');
+                   
+                      sunday_date_time.textContent = new Date(data[0].result_time).toLocaleString();
+                      // displaying the heading
+                   //    var sec_round_heading = document.getElementById("sec_round_heading");
+                   //    sec_round_heading.classList.remove('hidden');
+               }
                 
             }
 
-            if(sundayResult == 'XX'){
-                 // Show something waitin 
-                 var waiting_message = document.getElementById('sundayWaitingMessage');
-                 waiting_message.classList.remove('hidden');
-            } else {
-                   // displaying the winning number
-                   var sundayResultNumber = document.getElementById("sundayResultNumber");
-                   sundayResultNumber.classList.remove('hidden');
-                   sundayResultNumber.textContent = `${sundayResult}`;
-                   // displaying the date
-                   var sunday_date_time = document.getElementById("sunday_date_time");
-                   sunday_date_time.classList.remove('hidden');
-                
-                   sunday_date_time.textContent = new Date(data[0].result_time).toLocaleString();
-                   // displaying the heading
-                //    var sec_round_heading = document.getElementById("sec_round_heading");
-                //    sec_round_heading.classList.remove('hidden');
-            }
+         
 
         }, 1000);
         
