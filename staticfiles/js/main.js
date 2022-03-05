@@ -1,19 +1,21 @@
 window.onload = () => {
-
-    // First Round
-    fetch('http://127.0.0.1:8000/api/first-round/')
+    const root_url = window.location.origin
+    // First Round Daily Game
+    fetch(`${root_url}/api/first-round/`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
             } else {
-                return {'Error': 'Something went wrong with the response'}
+                return {
+                    'Error': 'Something went wrong with the response'
+                }
             };
         })
         .then((data) => setCountDown(data))
         .catch(error => console.log(error));
 
 
-    // Coudown for First Round
+    // Countdown for First Round Daily Game
 
     const setCountDown = (data) => {
         // html elements
@@ -115,8 +117,8 @@ window.onload = () => {
 
 
 
-    // Second Round
-    fetch('http://127.0.0.1:8000/api/second-round/')
+    // Second Round Daily Game
+    fetch(`${root_url}/api/second-round/`)
         .then((response) => {
             if (response.ok) {
                 return response.json();
@@ -200,6 +202,31 @@ window.onload = () => {
                 }, 1000);
 
             },
-        )
+        ).catch(err => console.log(err));
+
+
+
+
+
+    //   Sunday Result Functionalities
+
+    fetch(`${root_url}/api/sunday-result/`)
+    .then(
+        (response) => {
+            if (response.ok){
+                return response.json();
+            } else {
+                return {"error": "Api fetch error"}
+            }
+        }
+    ).then((data)=>{
+        var sundayResultDateTime = new Date(date[0].result_time).getTime();
+    })
+
+
+
+
+
+
 
 }
