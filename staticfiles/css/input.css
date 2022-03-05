@@ -15,7 +15,11 @@
     text-shadow: 1px 1px 20px  black ;
 }
 
-
+@media only screen and (max-width:600px){
+  #count_down div {
+    font-size:34px;
+  }
+}
 
 /* My Dice Css Styles */
 
