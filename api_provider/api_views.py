@@ -5,7 +5,7 @@ from sunday.models import SundayResult
 
 
 class SundayResultViewSet(viewsets.ModelViewSet):
-    serilializer_class = SundayResultSerializer
+    serializer_class = SundayResultSerializer
     queryset = SundayResult.objects.all().order_by('-result_time')
 
 class FirstRoundViewSet(viewsets.ModelViewSet):
