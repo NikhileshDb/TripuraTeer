@@ -55,12 +55,14 @@ window.onload = () => {
             () => {
                 var now = new Date().getTime();
 
-
+                var daily_first_round_history = document.getElementsByClassName('daily_first_round_history')
                 // Check if the time is already past
                 if (timeFromApi < now) {
+                    daily_first_round_history[0].classList.remove('hidden');
                     // Do something coz the time is over
                     var firstroundTimeDifference = -1;
                 } else {
+                    daily_first_round_history[0].classList.add('hidden');
                     // get the amount of time left hence the difference from now
                     var firstroundTimeDifference = timeFromApi - now;
                 };
@@ -140,46 +142,54 @@ window.onload = () => {
                 // Timer Funtionality
                 var x = setInterval(function () {
                     var now = new Date().getTime();
-
+                    var daily_second_round_history = document.getElementsByClassName('daily_second_round_history');
                     if (secondRoundDateTime < now) {
+                        daily_second_round_history[0].classList.remove('hidden');
                         var secRoundDiv = document.getElementsByClassName("2nd-round");
                         secRoundDiv[0].classList.add('hidden');
+                    } else {
+
+                        var daily_second_round_history = document.getElementsByClassName('daily_second_round_history');
+                        daily_second_round_history[0].classList.add('hidden');
+                       
+
+
+                        var diff = secondRoundDateTime - now;
+
+                        // Time calculations for days, hours, minutes and seconds
+                        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+                        // breaking the times 
+                        var nDays = diff / (1000 * 60 * 60 * 24);
+                        var nHours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
+                        var nH0 = nHours / 10;
+                        var nH1 = nHours % 10;
+                        var nMinutes = (diff % (1000 * 60 * 60)) / (1000 * 60);
+                        var nmin0 = nMinutes / 10;
+                        var nmin1 = nMinutes % 10;
+                        var nSeconds = (diff % (1000 * 60)) / 1000
+                        var n0ten = nSeconds / 10
+                        var n1ten = nSeconds % 10
+    
+                        // show the timer
+                        document.getElementById("2ndsec2").innerText = Math.floor(n0ten);
+                        document.getElementById("2ndsec02").innerText = Math.floor(n1ten);
+                        document.getElementById("2ndmin0").innerText = Math.floor(nmin0);
+                        document.getElementById("2ndmin1").innerText = Math.floor(nmin1);
+                        document.getElementById("2ndhour0").innerText = Math.floor(nH0);
+                        document.getElementById("2ndhour1").innerText = Math.floor(nH1);
+    
                     }
-                    var diff = secondRoundDateTime - now;
-
-                    // Time calculations for days, hours, minutes and seconds
-                    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-                    // breaking the times 
-                    var nDays = diff / (1000 * 60 * 60 * 24);
-                    var nHours = (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60);
-                    var nH0 = nHours / 10;
-                    var nH1 = nHours % 10;
-                    var nMinutes = (diff % (1000 * 60 * 60)) / (1000 * 60);
-                    var nmin0 = nMinutes / 10;
-                    var nmin1 = nMinutes % 10;
-                    var nSeconds = (diff % (1000 * 60)) / 1000
-                    var n0ten = nSeconds / 10
-                    var n1ten = nSeconds % 10
-
-                    // show the timer
-                    document.getElementById("2ndsec2").innerText = Math.floor(n0ten);
-                    document.getElementById("2ndsec02").innerText = Math.floor(n1ten);
-                    document.getElementById("2ndmin0").innerText = Math.floor(nmin0);
-                    document.getElementById("2ndmin1").innerText = Math.floor(nmin1);
-                    document.getElementById("2ndhour0").innerText = Math.floor(nH0);
-                    document.getElementById("2ndhour1").innerText = Math.floor(nH1);
-
 
                     if (diff < 0) {
                         // Set all the values to zero 00:00:00
                         clearInterval(x);
                         var secRoundDiv = document.getElementsByClassName("2nd-round");
                         secRoundDiv[0].classList.add('hidden');
-
+                        
                         // If the winning number is not created show the loading message
                         // else show the winning number
                         if (secondRoundResult == 'XX') {
@@ -223,22 +233,27 @@ window.onload = () => {
         }
     ).then((data)=>{
         var sundayResultDateTime = new Date(data[0].result_time).getTime();
+
+        // Check if the winning number is set or not if not set then
+        // set the winning number variable with default value
+        // else set the variable with the winning number
+        var sunday_winning_number_history = document.getElementsByClassName('sunday_winning_number_history');
+        
         if(data[0].winning_number == null){
             var sundayResult = "XX"; 
         } else {
-            sundayResult = data[0].winning_number; 
+            sundayResult = data[0].winning_number;
+            
         }
         
         var x = setInterval(() => {
-
             var now = new Date().getTime();
-
             if (sundayResultDateTime < now) {
                 var sundayResultTimerDiv = document.getElementsByClassName("sunday_result_timer_sction");
                 sundayResultTimerDiv[0].classList.add('hidden');
-            }
+            } 
             var diff = sundayResultDateTime - now;
-
+            
             // Time calculations for days, hours, minutes and seconds
             var days = Math.floor(diff / (1000 * 60 * 60 * 24));
             var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
@@ -264,20 +279,20 @@ window.onload = () => {
             document.getElementById("sundaymin1").innerText = Math.floor(nmin1);
             document.getElementById("sundayhour0").innerText = Math.floor(nH0);
             document.getElementById("sundayhour1").innerText = Math.floor(nH1);
-            // changing the heading of the card 
-            var sundayresultHeading = document.getElementById("sundayresultHeading");
-            sundayresultHeading.textContent = 'TIME REMAINING'; 
-            if(diff <= 0){
+            var sundayresultHeading = document.getElementById('sundayresultHeading');
+            sundayresultHeading.textContent = 'TIME REMAINING';
+            sunday_winning_number_history[0].classList.add('hidden'); 
+            if(diff < 0){
                 clearInterval(x);
                 sundayResultTimerDiv[0].classList.add('hidden');
-                sundayresultHeading.classList.add('hidden'); 
-                if(sundayResult == 'XX'){
-                    // Show something waitin 
-                    var waiting_message = document.getElementById('sundayWaitingMessage');
-                    waiting_message.classList.remove('hidden');
-               } else {
+                sundayresultHeading.textContent = 'COMING SOON';
+                
+                if(sundayResult == "XX"){
+                sundayresultHeading.textContent = 'RESULT NOT YET PUBLISHED';
+                } else {
+                    sunday_winning_number_history[0].classList.remove('hidden'); 
+                    sundayresultHeading.textContent = 'WINNING NUMBER';
                       // displaying the winning number
-                      sundayresultHeading.classList.remove('hidden');
                       sundayresultHeading.textContent = 'WINNING NUMBER'; 
                       var sundayResultNumber = document.getElementById("sundayResultNumber");
                       sundayResultNumber.classList.remove('hidden');
@@ -287,9 +302,7 @@ window.onload = () => {
                       sunday_date_time.classList.remove('hidden');
                    
                       sunday_date_time.textContent = new Date(data[0].result_time).toLocaleString();
-                      // displaying the heading
-                   //    var sec_round_heading = document.getElementById("sec_round_heading");
-                   //    sec_round_heading.classList.remove('hidden');
+ 
                }
                 
             }

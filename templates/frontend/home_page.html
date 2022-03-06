@@ -115,10 +115,10 @@
                                             {{daily.first_round.result_time|date:'Y-m-d'}}
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
+                                    <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
                                         {{daily.first_round.winning_number}}
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
+                                    <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
                                         {{daily.second_round.winning_number}}
                                     </td>
 
@@ -149,7 +149,7 @@
 
             <!-- Result Number -->
             <div id="sundayresultHeading" class="text-white text-2xl"></div>
-            <div id="sundayResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">45</div>
+            <div id="sundayResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold"></div>
             <div id="sunday_date_time" class="text-white text-center hidden">
             </div>
             <!-- Display Timer -->
@@ -166,7 +166,7 @@
                 </div>
             </div>
             <!-- Display  Waiting-->
-            <div id="sundayWaitingMessage" class="hidden text-white text-[24px] font-bold">Loading ..</div>
+            <div id="sundayWaitingMessage" class="hidden text-white text-[24px] font-bold"></div>
         </div>
     </div>
 </div>
@@ -203,7 +203,7 @@
                                             {{obj.result_time|date:'Y-m-d'}}
                                         </div>
                                     </td>
-                                    <td class="px-6 py-4 whitespace-nowrap">
+                                    <td class="px-6 py-4 whitespace-nowrap sunday_winning_number_history">
                                         {% if obj.winning_number == None %}
                                          Not yet published
                                         {% else %}
@@ -213,7 +213,6 @@
                                 </tr>
                                  {% endfor %}
 
-                                    <!-- More people... -->
                                 </tbody>
                             </table>
                         </div>
