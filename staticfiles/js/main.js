@@ -1,3 +1,7 @@
+const overlay = document.getElementById('overlay');
+overlay.addEventListener("animationend", () =>{ 
+    overlay.classList.add('hidden')});
+
 window.onload = () => {
     const root_url = window.location.origin
     // First Round Daily Game
