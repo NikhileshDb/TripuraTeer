@@ -1,6 +1,10 @@
 {% extends '../base.html' %}
-
+{% load static %}
 {% block content %}
+
+<div id="overlay" class="fixed h-screen w-full z-[100] top-0 bottom-0">
+    <img  class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
+</div>
 <!-- Daily Game Previous Results Here -->
 
 <div class="w-full sm:px-[20%]">

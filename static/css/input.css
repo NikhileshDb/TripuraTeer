@@ -3,6 +3,24 @@
 @tailwind utilities;
 
 
+
+/* opacity tranistion animation for loading */
+
+#overlay {
+  opacity: 100;
+  animation: fade 2s ease-out 1s 1;
+}
+
+@keyframes fade {
+  from {
+    opacity:100;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+
 /* mycustom */
 .shadow_blur {
   text-shadow: 0px 0px 10px  rgb(255, 255, 255) ;

@@ -2,6 +2,12 @@
 {% load static %}
 {% block content %}
 
+
+
+<div id="overlay" class="fixed h-screen w-full z-[100] top-0 bottom-0 left-0 right-0">
+     <img  class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
+</div>
+
 <div class="relative bg-[url('../../static/images/bg.png')] bg-cover h-[500px] sm:w-full">
     <!-- overlay -->
     <div class="absolute  h-full w-full bg-[#2f0327e0]">

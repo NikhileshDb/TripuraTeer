@@ -1,10 +1,18 @@
 {% extends '../base.html' %}
-
+{% load static %}
 {% block content %}
-    <div class="bg-gradient-to-br from-[#4b043c] to-[#7e0763] text-white h-screen flex flex-col items-center justify-center">
-        <h2 class="text-[2.5rem] text-center  pb-10">About Starball</h2>
-        <p class="text-center sm:px-[10%] py-2">
-            Startball is a lucky dream lotery openly held nationaly and consider legal in most of the state of India. A ball numbered 1,2,3,4 and 0 are pick from the glass box of four in series and a single number is formed comprising  of four digit and prize is offered based on the single number. This is a free and fair ga,e with no cheting like other lottery game. Slowly Starball is gaining populariy in all the state of the India and abroad, a winner is paid ₹200 for bet ₹1 .
-        </p>
-    </div>
+<div id="overlay" class="fixed h-screen w-full z-[100] top-0 bottom-0">
+    <img class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
+</div>
+<div
+    class="bg-gradient-to-br from-[#4b043c] to-[#7e0763] text-white h-screen flex flex-col items-center justify-center">
+    <h2 class="text-[2.5rem] text-center  pb-10">About Starball</h2>
+    <p class="text-center sm:px-[10%] py-2">
+        Startball is a lucky dream lotery openly held nationaly and consider legal in most of the state of India. A ball
+        numbered 1,2,3,4 and 0 are pick from the glass box of four in series and a single number is formed comprising of
+        four digit and prize is offered based on the single number. This is a free and fair ga,e with no cheting like
+        other lottery game. Slowly Starball is gaining populariy in all the state of the India and abroad, a winner is
+        paid ₹200 for bet ₹1 .
+    </p>
+</div>
 {% endblock %}
