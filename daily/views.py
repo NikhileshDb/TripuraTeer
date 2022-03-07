@@ -11,4 +11,3 @@ def DailyHomePage(request):
         'sunday': sunday,
     }
     return render(request, 'frontend/home_page.html', context)
-
