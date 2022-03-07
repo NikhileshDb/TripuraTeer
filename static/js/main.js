@@ -237,21 +237,25 @@ window.onload = () => {
         // Check if the winning number is set or not if not set then
         // set the winning number variable with default value
         // else set the variable with the winning number
-        var sunday_winning_number_history = document.getElementsByClassName('sunday_winning_number_history');
-        
+       
         if(data[0].winning_number == null){
             var sundayResult = "XX"; 
+            
         } else {
             sundayResult = data[0].winning_number;
-            
         }
         
         var x = setInterval(() => {
             var now = new Date().getTime();
+            var sunday_winning_number_history = document.getElementsByClassName('sunday_winning_number_history');
             if (sundayResultDateTime < now) {
                 var sundayResultTimerDiv = document.getElementsByClassName("sunday_result_timer_sction");
                 sundayResultTimerDiv[0].classList.add('hidden');
-            } 
+                sunday_winning_number_history[0].classList.remove('hidden');
+            
+            } {
+                sunday_winning_number_history[0].classList.add('hidden');
+            }
             var diff = sundayResultDateTime - now;
             
             // Time calculations for days, hours, minutes and seconds
@@ -281,7 +285,6 @@ window.onload = () => {
             document.getElementById("sundayhour1").innerText = Math.floor(nH1);
             var sundayresultHeading = document.getElementById('sundayresultHeading');
             sundayresultHeading.textContent = 'TIME REMAINING';
-            sunday_winning_number_history[0].classList.add('hidden'); 
             if(diff < 0){
                 clearInterval(x);
                 sundayResultTimerDiv[0].classList.add('hidden');
@@ -290,9 +293,10 @@ window.onload = () => {
                 if(sundayResult == "XX"){
                 sundayresultHeading.textContent = 'RESULT NOT YET PUBLISHED';
                 } else {
-                    sunday_winning_number_history[0].classList.remove('hidden'); 
+                    
                     sundayresultHeading.textContent = 'WINNING NUMBER';
                       // displaying the winning number
+                      sundayresultHeading.classList.remove('hidden');
                       sundayresultHeading.textContent = 'WINNING NUMBER'; 
                       var sundayResultNumber = document.getElementById("sundayResultNumber");
                       sundayResultNumber.classList.remove('hidden');
@@ -302,7 +306,9 @@ window.onload = () => {
                       sunday_date_time.classList.remove('hidden');
                    
                       sunday_date_time.textContent = new Date(data[0].result_time).toLocaleString();
- 
+                      // displaying the heading
+                   //    var sec_round_heading = document.getElementById("sec_round_heading");
+                   //    sec_round_heading.classList.remove('hidden');
                }
                 
             }
