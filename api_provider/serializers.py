@@ -3,6 +3,13 @@ from rest_framework import serializers
 from daily.models import DailyResult, FirstRound, SecondRound
 from rest_framework.decorators import api_view
 from sunday.models import SundayResult
+from wednesday.models import WednesdayResult
+
+class WednesdayResultSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = WednesdayResult
+        fields = '__all__'
+
 class SundayResultSerializer(serializers.ModelSerializer):
     class Meta:
         model = SundayResult

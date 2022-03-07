@@ -1,8 +1,12 @@
 from rest_framework import viewsets
-from .serializers import FirstRoundSerializer, SecondRoundSerializer, SundayResultSerializer
+from .serializers import FirstRoundSerializer, SecondRoundSerializer, SundayResultSerializer, WednesdayResultSerializer
 from daily.models import FirstRound, SecondRound
 from sunday.models import SundayResult
+from wednesday.models import WednesdayResult
 
+class WednesdayResultViewSet(viewsets.ModelViewSet):
+    serilaizer_class = WednesdayResultSerializer
+    queryset = WednesdayResult.objects.all().order_by('-result_time')
 
 class SundayResultViewSet(viewsets.ModelViewSet):
     serializer_class = SundayResultSerializer

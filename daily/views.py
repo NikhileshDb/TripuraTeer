@@ -11,3 +11,10 @@ def DailyHomePage(request):
         'sunday': sunday,
     }
     return render(request, 'frontend/home_page.html', context)
+
+def DailyGamePreviousResult(request):
+    dailyResult = DailyResult.objects.all().order_by('-id')
+    context = {
+        'dailyResult': dailyResult
+    }
+    return render(request, 'frontend/daily_game_history.html', context)

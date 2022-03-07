@@ -1,10 +1,10 @@
 from django.urls import path
+from .views import DailyHomePage, DailyGamePreviousResult
 
 
-
-from .views import DailyHomePage
 urlpatterns = [
     path('', DailyHomePage, name="daily_home"),
+    path('daily-game-previous-result/', DailyGamePreviousResult, name="daily-game-previous-result"),
    
 ]
 
