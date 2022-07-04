@@ -18,3 +18,9 @@ def DailyGamePreviousResult(request):
         'dailyResult': dailyResult
     }
     return render(request, 'frontend/daily_game_history.html', context)
+
+
+######Privacy Policy for App########################
+
+def privacyPolicy(request):
+    return render(request, 'frontend/privacy_policy.html')

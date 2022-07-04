@@ -4,6 +4,11 @@ from django.urls import path, include
 from . import settings
 from django.conf.urls.static import static
 from django.views.generic import TemplateView
+
+admin.site.site_header = 'Tripura Teer'                    # default: "Django Administration"
+admin.site.index_title = 'Tripura Teer'                 # default: "Site administration"
+admin.site.site_title = 'Tripura Teer' 
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('daily.urls')),
