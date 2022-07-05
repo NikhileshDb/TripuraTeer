@@ -26,7 +26,7 @@ class SecondRound(models.Model):
 
 choice = (
         ('draft', 'draft'),
-        ('published', 'published'),
+        ('publish', 'publish'),
     )  
 class DailyResult(models.Model):
     first_round = models.OneToOneField(FirstRound, on_delete=models.CASCADE, null=True)

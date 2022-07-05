@@ -1,11 +1,13 @@
 from django.shortcuts import render
 from .models import DailyResult
 from sunday.models import SundayResult
+from sunday.models import StarBallGame
 
 # Create your views here.
 def DailyHomePage(request):
     result = DailyResult.objects.all().order_by('-id')
-    sunday = SundayResult.objects.all().order_by('-id')
+    # sunday = SundayResult.objects.all().order_by('-id')
+    sunday = StarBallGame.objects.all().order_by('-id')
     context = {
         'result': result,
         'sunday': sunday,

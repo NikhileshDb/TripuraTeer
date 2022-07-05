@@ -5,7 +5,7 @@
 
 
 <div id="overlay" class="fixed h-screen w-full z-[100] top-0 bottom-0 left-0 right-0">
-     <img  class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
+    <img class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
 </div>
 
 <div class="relative bg-[url('../../static/images/bg.png')] bg-cover h-[500px] sm:w-full">
@@ -28,14 +28,21 @@
 
 <!-- Today's Result Section -->
 <div class="w-full mt-[60px] relative">
-    <svg class="absolute sm:top-[10%] blur-lg bottom-0 sm:left-[10%] z-[-10] w-auto h-[300] sm:h-[1200px] stroke-0 fill-[#ecd50465] text-center" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224C273.7 224 288 238.3 288 256zM112 256C112 176.5 176.5 112 256 112C335.5 112 400 176.5 400 256C400 335.5 335.5 400 256 400C176.5 400 112 335.5 112 256zM256 336C300.2 336 336 300.2 336 256C336 211.8 300.2 176 256 176C211.8 176 176 211.8 176 256C176 300.2 211.8 336 256 336zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64C149.1 64 64 149.1 64 256C64 362 149.1 448 256 448C362 448 448 362 448 256C448 149.1 362 64 256 64z"/></svg>
+    <svg class="absolute sm:top-[10%] blur-lg bottom-0 sm:left-[10%] z-[-10] w-auto h-[300] sm:h-[1200px] stroke-0 fill-[#ecd50465] text-center"
+        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+        <path
+            d="M288 256C288 273.7 273.7 288 256 288C238.3 288 224 273.7 224 256C224 238.3 238.3 224 256 224C273.7 224 288 238.3 288 256zM112 256C112 176.5 176.5 112 256 112C335.5 112 400 176.5 400 256C400 335.5 335.5 400 256 400C176.5 400 112 335.5 112 256zM256 336C300.2 336 336 300.2 336 256C336 211.8 300.2 176 256 176C211.8 176 176 211.8 176 256C176 300.2 211.8 336 256 336zM512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256zM256 64C149.1 64 64 149.1 64 256C64 362 149.1 448 256 448C362 448 448 362 448 256C448 149.1 362 64 256 64z" />
+    </svg>
     <h2 class="text-center shadow_blur font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Daily Game</h2>
     <div class="flex flex-col gap-4  sm:flex-row justify-evenly mt-[40px]">
-        <div class="w-auto h-auto sm:h-[500px] sm:w-[500px] bg-[#35072b] py-2 flex flex-col justify-center items-center">
+        <div
+            class="w-auto h-auto sm:h-[500px] sm:w-[500px] bg-[#35072b] py-2 flex flex-col justify-center items-center">
 
             <!-- Result Number -->
             <div id="first_round_heading" class="text-white text-2xl p-2 hidden">FIRST ROUND</div>
-            <div id="firstRoundResult" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold"></div>
+            <div id="firstRoundResult" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">
+            </div>
             <div id="first_round_time" class="text-white hidden whitespace-normal p-2">
             </div>
             <!-- Display Timer -->
@@ -58,10 +65,12 @@
 
         </div>
 
-        <div class=" w-auto h-auto sm:h-[500px] shadow-xl sm:w-[500px] bg-[#35072b] py-2 flex flex-col justify-center items-center">
+        <div
+            class=" w-auto h-auto sm:h-[500px] shadow-xl sm:w-[500px] bg-[#35072b] py-2 flex flex-col justify-center items-center">
             <!-- Result Number -->
             <div id="sec_round_heading" class="text-white text-2xl p-2 hidden">SECOND ROUND</div>
-            <div id="secondRoundResult" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold"></div>
+            <div id="secondRoundResult" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">
+            </div>
             <div id="second_round_time" class="text-white hidden p-2 whitespace-normal"></div>
             <!-- Display Timer -->
             <div class="flex flex-col 2nd-round">
@@ -88,7 +97,8 @@
 <!-- Daily Game Previous Results Here -->
 
 <div class="w-full sm:px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Daily Game History</h2>
+    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Daily Game History
+    </h2>
 
     <!-- table -->
     <div class="">
@@ -114,30 +124,34 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                 {% for daily in result|slice:':10' %}
-                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            {{daily.first_round.result_time|date:'Y-m-d'}}
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
-                                        {{daily.first_round.winning_number}}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
-                                        {{daily.second_round.winning_number}}
-                                    </td>
+                                    {% for daily in result|slice:':10' %}
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                {{daily.first_round.result_time|date:'Y-m-d'}}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
+                                            {{daily.first_round.winning_number}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
+                                            {{daily.second_round.winning_number}}
+                                        </td>
 
-                                </tr>
-                                 {% endfor %}
+                                    </tr>
+                                    {% endfor %}
 
                                     <!-- More people... -->
                                 </tbody>
                             </table>
-                            
+
                         </div>
-                        <a href="{% url 'd_prev_hist' %}"> <p class="text-center bg-[#d67f04] py-2 cursor-pointer hover:shadow-lg text-white font-semibold">VIEW MORE</p></a>
-                       
+                        <a href="{% url 'd_prev_hist' %}">
+                            <p
+                                class="text-center bg-[#d67f04] py-2 cursor-pointer hover:shadow-lg text-white font-semibold">
+                                VIEW MORE</p>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -152,13 +166,14 @@
 
 <!-- Sunday's Result Section -->
 <div class="w-full mt-[60px]">
-    <h2 class="text-center shadow_blur font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Sunday Game</h2>
+    <h2 class="text-center shadow_blur font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">StarBall Game</h2>
     <div class="flex flex-row justify-evenly mt-[40px]">
         <div class="h-auto w-full p-4 sm:h-[500px] sm:w-[500px] bg-[#35072b] flex flex-col justify-center items-center">
 
             <!-- Result Number -->
             <div id="sundayresultHeading" class="text-white text-2xl"></div>
-            <div id="sundayResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold"></div>
+            <div id="sundayResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">
+            </div>
             <div id="sunday_date_time" class="text-white text-center hidden">
             </div>
             <!-- Display Timer -->
@@ -183,7 +198,9 @@
 <!-- Sunday Game Previous Results Here -->
 
 <div class=" w-full sm:px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Sunday Game History</h2>
+    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">StarBall Game
+        History
+    </h2>
 
     <!-- table -->
     <div class="pb-20">
@@ -205,27 +222,28 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                 {% for obj in sunday|slice:':10' %}
-                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            {{obj.result_time|date:'Y-m-d'}}
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap sunday_winning_number_history">
-                                        {% if obj.winning_number == None %}
-                                         Not yet published
-                                        {% else %}
-                                        {{obj.winning_number}}
-                                        {% endif %}
-                                    </td>
-                                </tr>
-                                 {% endfor %}
+                                    {% for obj in sunday|slice:':10' %}
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                {{obj.result_time|date:'Y-m-d'}}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap sunday_winning_number_history">
+                                            {% if obj.winning_number == None %}
+                                            Not yet published
+                                            {% else %}
+                                            {{obj.winning_number}}
+                                            {% endif %}
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
 
                                 </tbody>
                             </table>
                         </div>
-                        <p class="text-center bg-[#d67f04] py-2 cursor-pointer shadow-lg text-white font-semibold">VIEW MORE</p>
+                        <p class="text-center bg-[#d67f04] py-2 cursor-pointer shadow-lg text-white font-semibold">VIEW
+                            MORE</p>
                     </div>
                 </div>
             </div>

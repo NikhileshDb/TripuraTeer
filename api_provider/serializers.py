@@ -3,6 +3,7 @@ from rest_framework import serializers
 from daily.models import DailyResult, FirstRound, SecondRound
 from rest_framework.decorators import api_view
 from sunday.models import SundayResult
+from sunday.models import StarBallGame
 from wednesday.models import WednesdayResult
 
 class WednesdayResultSerializer(serializers.ModelSerializer):
@@ -12,7 +13,7 @@ class WednesdayResultSerializer(serializers.ModelSerializer):
 
 class SundayResultSerializer(serializers.ModelSerializer):
     class Meta:
-        model = SundayResult
+        model = StarBallGame
         fields = '__all__'
         
 class DailyResultSerializer(serializers.ModelSerializer):
