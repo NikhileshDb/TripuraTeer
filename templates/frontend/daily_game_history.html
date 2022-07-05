@@ -3,12 +3,13 @@
 {% block content %}
 
 <div id="overlay" class="fixed h-screen w-full z-[100] top-0 bottom-0">
-    <img  class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
+    <img class="object-cover  h-screen w-full" src="{% static 'images/loading.gif' %}" alt="Loading" />
 </div>
 <!-- Daily Game Previous Results Here -->
 
 <div class="w-full sm:px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#d58107]">Daily Game History</h2>
+    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#3b3b3b]">Daily Game History
+    </h2>
 
     <!-- table -->
     <div class="pb-[5%]">
@@ -34,30 +35,30 @@
                                     </tr>
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
-                                 {% for daily in dailyResult %}
-                                 <tr>
-                                    <td class="px-6 py-4 whitespace-nowrap">
-                                        <div class="flex items-center">
-                                            {{daily.first_round.result_time|date:'Y-m-d'}}
-                                        </div>
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
-                                        {{daily.first_round.winning_number}}
-                                    </td>
-                                    <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
-                                        {{daily.second_round.winning_number}}
-                                    </td>
+                                    {% for daily in dailyResult %}
+                                    <tr>
+                                        <td class="px-6 py-4 whitespace-nowrap">
+                                            <div class="flex items-center">
+                                                {{daily.first_round.result_time|date:'Y-m-d'}}
+                                            </div>
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
+                                            {{daily.first_round.winning_number}}
+                                        </td>
+                                        <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
+                                            {{daily.second_round.winning_number}}
+                                        </td>
 
-                                </tr>
-                                 {% endfor %}
+                                    </tr>
+                                    {% endfor %}
 
                                     <!-- More people... -->
                                 </tbody>
                             </table>
-                            
+
                         </div>
-                   
-                       
+
+
                     </div>
                 </div>
             </div>
