@@ -713,6 +713,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 28px;
 }
 
+.w-\[20px\] {
+  width: 20px;
+}
+
 .min-w-full {
   min-width: 100%;
 }
@@ -899,6 +903,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #00000080;
 }
 
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
 .bg-gradient-to-br {
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
@@ -1044,6 +1053,31 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 10px;
 }
 
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.py-\[5\%\] {
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+.py-\[100px\] {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.py-\[500px\] {
+  padding-top: 500px;
+  padding-bottom: 500px;
+}
+
+.py-\[200px\] {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
 .pb-10 {
   padding-bottom: 2.5rem;
 }
@@ -1078,6 +1112,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-\[20\%\] {
   padding-top: 20%;
+}
+
+.pt-\[200px\] {
+  padding-top: 200px;
 }
 
 .text-left {
@@ -1626,6 +1664,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:pt-\[0\] {
     padding-top: 0;
+  }
+
+  .sm\:pb-\[200px\] {
+    padding-bottom: 200px;
   }
 
   .sm\:text-\[45px\] {
