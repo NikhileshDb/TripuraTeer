@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'wednesday',
     'rest_framework',
     "corsheaders",
+    'django.contrib.sitemaps',
 ]
 
 MIDDLEWARE = [

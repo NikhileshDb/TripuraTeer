@@ -51,6 +51,10 @@ class DailyResult(models.Model):
              self.second_round,
             self.second_round.result_time.strftime("%I:%M %p")
         )
+
+    def get_absolute_url(self):
+        pass
+
     
     
      
