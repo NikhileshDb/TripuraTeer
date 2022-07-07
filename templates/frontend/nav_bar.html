@@ -21,9 +21,17 @@
             <a href="{% url 'about' %}">
                 <li class="cursor-pointer hover:text-[#d58107]">About</li>
             </a>
-            <li class="cursor-pointer hover:text-[#d58107]">Games</li>
-            <li class="cursor-pointer hover:text-[#d58107]">Faq</li>
-            <li class="cursor-pointer hover:text-[#d58107]">Contact</li>
+
+            <a href="{% url 'd_prev_hist' %}">
+                <li class="cursor-pointer hover:text-[#d58107]">Daily Previous Results</li>
+            </a>
+
+            <a href="{% url 'start_ball_previous' %}">
+                <li class="cursor-pointer hover:text-[#d58107]">Starball Previous Results</li>
+            </a>
+
+            <!-- <li class="cursor-pointer hover:text-[#d58107]">Faq</li>
+            <li class="cursor-pointer hover:text-[#d58107]">Contact</li> -->
         </ul>
     </div>
 </div>

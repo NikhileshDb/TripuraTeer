@@ -215,8 +215,7 @@
 <!-- StarBall Game Previous Results Here -->
 
 <div class="w-full sm:px-[20%]">
-    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#525252]">StarBall Game
-        History
+    <h2 class="text-center py-[50px] font-bold text-[34px] sm:text-[45px] uppercase text-[#525252]">StarBall History
     </h2>
 
     <!-- table -->
@@ -247,11 +246,7 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap sunday_winning_number_history">
-                                            {% if obj.winning_number == None %}
-                                            Not yet published
-                                            {% else %}
                                             {{obj.winning_number}}
-                                            {% endif %}
                                         </td>
                                     </tr>
                                     {% endfor %}

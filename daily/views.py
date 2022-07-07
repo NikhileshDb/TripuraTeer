@@ -21,6 +21,13 @@ def DailyGamePreviousResult(request):
     }
     return render(request, 'frontend/daily_game_history.html', context)
 
+def StarBallPreviousResult(request):
+    starballResults = StarBallGame.objects.all().order_by('-id')
+    context = {
+        'starballResults' : starballResults
+    }
+    return render(request, 'frontend/starball_history.html', context)
+
 
 ######Privacy Policy for App########################
 
