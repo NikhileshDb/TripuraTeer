@@ -1,6 +1,7 @@
 const overlay = document.getElementById('overlay');
-overlay.addEventListener("animationend", () =>{ 
-    overlay.classList.add('hidden')});
+overlay.addEventListener("animationend", () => {
+    overlay.classList.add('hidden')
+});
 
 window.onload = () => {
     const root_url = window.location.origin
@@ -156,11 +157,11 @@ window.onload = () => {
                         secRoundDiv[0].classList.add('hidden');
                         // sec_round_heading.textContent = "WINNING NUMBER";
                     } else {
-                        
-                    var daily_second_round_history = document.getElementsByClassName('daily_second_round_history');
-                    daily_second_round_history[0].classList.add('hidden');
-                    sec_round_heading.classList.remove('hidden');
-                    sec_round_heading.textContent = "TIME REMAINING";
+
+                        var daily_second_round_history = document.getElementsByClassName('daily_second_round_history');
+                        daily_second_round_history[0].classList.add('hidden');
+                        sec_round_heading.classList.remove('hidden');
+                        sec_round_heading.textContent = "TIME REMAINING";
                     }
                     var diff = secondRoundDateTime - now;
 
@@ -190,11 +191,11 @@ window.onload = () => {
                     document.getElementById("2ndmin1").innerText = Math.floor(nmin1);
                     document.getElementById("2ndhour0").innerText = Math.floor(nH0);
                     document.getElementById("2ndhour1").innerText = Math.floor(nH1);
-                    
-               
-                   
+
+
+
                     secondRoundResultLogic(diff, secondRoundResult, x, data);
-                    
+
 
 
                 }, 1000);
@@ -239,7 +240,7 @@ window.onload = () => {
 
     //   Sunday Result Functionalities
 
-    fetch(`${root_url}/api/sunday-result/`)
+    fetch(`${root_url}/api/starball-result/`)
         .then(
             (response) => {
                 if (response.ok) {
@@ -325,7 +326,7 @@ window.onload = () => {
                         sunday_date_time.classList.remove('hidden');
 
                         sunday_date_time.textContent = new Date(data[0].result_time).toLocaleString();
-                    
+
                     }
 
                 }
