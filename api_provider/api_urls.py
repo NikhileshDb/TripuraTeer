@@ -1,11 +1,11 @@
 from rest_framework import routers
-from .api_views import FirstRoundViewSet, SecondRoundViewSet, SundayResultViewSet, WednesdayResultViewSet
+from .api_views import FirstRoundViewSet, SecondRoundViewSet, StarballResultViewSet, WednesdayResultViewSet
 
 # Initialize the router
 router = routers.SimpleRouter()
 router.register('first-round', FirstRoundViewSet, basename='first-round')
 router.register('second-round', SecondRoundViewSet, basename='second-round')
-router.register('sunday-result', SundayResultViewSet, basename='sunday-result')
+router.register('starball-result', StarballResultViewSet, basename='starball-result')
 router.register('wednesday-result', WednesdayResultViewSet, basename='wednesday-result')
 
 # Resiter the api urls

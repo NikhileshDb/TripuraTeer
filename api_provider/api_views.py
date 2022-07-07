@@ -9,7 +9,7 @@ class WednesdayResultViewSet(viewsets.ModelViewSet):
     serilaizer_class = WednesdayResultSerializer
     queryset = WednesdayResult.objects.all().order_by('-result_time')
 
-class SundayResultViewSet(viewsets.ModelViewSet):
+class StarballResultViewSet(viewsets.ModelViewSet):
     serializer_class = SundayResultSerializer
     queryset = StarBallGame.objects.all().order_by('-result_time')
 
