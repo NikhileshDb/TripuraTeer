@@ -2,6 +2,7 @@ from django.db import models
 from django.forms import TimeInput
 from django.contrib import admin
 from django.utils.html import format_html
+from django.urls import reverse
 # Create your models here.
 
 class FirstRound(models.Model):
@@ -53,7 +54,7 @@ class DailyResult(models.Model):
         )
 
     def get_absolute_url(self):
-        pass
+        return reverse('daily_home')
 
     
     
