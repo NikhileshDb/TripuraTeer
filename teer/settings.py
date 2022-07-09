@@ -15,7 +15,7 @@ SECRET_KEY = 'django-insecure-ilt3slt=u7hcwmiepvq@jg$*qpluv%p1&%*h79*xe1=ma)cz)w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'tripurateertoday.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'tripurateertoday.com', 'www.tripurateertoday.com']
 
 # '194.163.43.110'
 # Application definition
@@ -142,4 +142,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CSRF_TRUSTED_ORIGINS = ['https://tripurateertoday.com/']
+CSRF_TRUSTED_ORIGINS = ['https://tripurateertoday.com', 'http://tripurateertoday.com']
