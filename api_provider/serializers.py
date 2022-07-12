@@ -16,10 +16,6 @@ class SundayResultSerializer(serializers.ModelSerializer):
         model = StarBallGame
         fields = '__all__'
         
-class DailyResultSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = DailyResult
-        fields = '__all__'
 
 class FirstRoundSerializer(serializers.ModelSerializer):
     class Meta:
@@ -31,3 +27,15 @@ class SecondRoundSerializer(serializers.ModelSerializer):
         model = SecondRound
         fields = '__all__'
 
+class DailyResultSerializer(serializers.ModelSerializer):
+    first_round = FirstRoundSerializer(required=True)
+    second_round = SecondRoundSerializer(required=True)
+    class Meta:
+        model = DailyResult
+        fields = '__all__'
+
+    def to_representation(self, instance):
+        response = super().to_representation(instance)
+        response['first_round'] = FirstRoundSerializer(instance.first_round).data
+        response['second_round'] = SecondRoundSerializer(instance.second_round).data
+        return response
