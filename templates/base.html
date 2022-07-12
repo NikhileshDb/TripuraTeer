@@ -1,15 +1,17 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
-    
-    <script  src="https://kit.fontawesome.com/14d09d47da.js" crossorigin="anonymous"></script>
+
+    <script src="https://kit.fontawesome.com/14d09d47da.js" crossorigin="anonymous"></script>
     <title>Tripura Teer</title>
 </head>
+
 <body>
     {% include 'frontend/nav_bar.html' %}
     {% block content %}
@@ -17,5 +19,19 @@
     {% endblock %}
     {% include 'frontend/footer.html' %}
     <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-158705754-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-158705754-1');
+    </script>
+
 </body>
+
 </html>
