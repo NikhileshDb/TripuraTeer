@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from .serializers import FirstRoundSerializer, SecondRoundSerializer, SundayResultSerializer, WednesdayResultSerializer
+from .serializers import FirstRoundSerializer, SecondRoundSerializer, SundayResultSerializer, WednesdayResultSerializer, DailyResultSerializer
 from daily.models import FirstRound, SecondRound
 from sunday.models import SundayResult
 from sunday.models import StarBallGame
@@ -21,3 +21,7 @@ class FirstRoundViewSet(viewsets.ModelViewSet):
 class SecondRoundViewSet(viewsets.ModelViewSet):
     serializer_class = SecondRoundSerializer
     queryset = SecondRound.objects.all().order_by('-result_time')
+
+class DailyResultViewSet(viewsets.ModelViewSet):
+    serializer_class = DailyResultSerializer
+    queryset = DailyResult.objects.all().order_by('-result_time')
