@@ -24,4 +24,4 @@ class SecondRoundViewSet(viewsets.ModelViewSet):
 
 class DailyResultViewSet(viewsets.ModelViewSet):
     serializer_class = DailyResultSerializer
-    queryset = DailyResult.objects.all().order_by('-result_time')
+    queryset = DailyResult.objects.all().order_by('-created_at')
