@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import DailyResult
 from sunday.models import SundayResult
 from sunday.models import StarBallGame
+from datetime import datetime, timezone
+import time
 
 # Create your views here.
 def DailyHomePage(request):
@@ -11,20 +13,24 @@ def DailyHomePage(request):
     context = {
         'result': result,
         'sunday': sunday,
+        'currentTime': datetime.now(timezone.utc)
     }
     return render(request, 'frontend/home_page.html', context)
 
 def DailyGamePreviousResult(request):
     dailyResult = DailyResult.objects.all().order_by('-id')
     context = {
-        'dailyResult': dailyResult
+        'dailyResult': dailyResult,
+          'currentTime': datetime.now(timezone.utc)
     }
     return render(request, 'frontend/daily_game_history.html', context)
 
 def StarBallPreviousResult(request):
     starballResults = StarBallGame.objects.all().order_by('-id')
+   
     context = {
-        'starballResults' : starballResults
+        'starballResults' : starballResults,
+        'currentTime': datetime.now(timezone.utc)
     }
     return render(request, 'frontend/starball_history.html', context)
 
@@ -33,3 +39,13 @@ def StarBallPreviousResult(request):
 
 def privacyPolicy(request):
     return render(request, 'frontend/privacy_policy.html')
+
+
+
+
+def draft(request):
+    starballResults = StarBallGame.objects.all().order_by('-id')
+    context = {
+        'objects' : starballResults
+    }
+    return render(request, 'frontend/draft.html', context)

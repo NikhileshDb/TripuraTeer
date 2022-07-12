@@ -35,6 +35,7 @@
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     {% for result in starballResults %}
+                                    {% if result.status == 'publish'  %}
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
@@ -42,9 +43,12 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
+                                            {% if currentTime >= result.result_time %}
                                             {{result.winning_number}}
+                                            {% endif %}
                                         </td>
                                     </tr>
+                                    {% endif %}
                                     {% endfor %}
 
                                     <!-- More people... -->

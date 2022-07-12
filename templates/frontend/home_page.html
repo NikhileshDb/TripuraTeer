@@ -60,22 +60,11 @@
             <div id="first_round_time" class="text-white hidden whitespace-normal p-2">
             </div>
             <!-- Display Timer -->
-            <div class="flex-col 1st-round">
-                <div id="count_down" class="flex flex-row justify-center items-center space-x-2">
-                    <div id="1sthour0">0</div>
-                    <div id="1sthour1">0</div>
-                    <div>:</div>
-                    <div id="1stmin0">0</div>
-                    <div id="1stmin1">0</div>
-                    <div>:</div>
-                    <div id="1stsec0">0</div>
-                    <div id="1stsec1">0</div>
-                </div>
+            <div class="flex-col first-round">
+
             </div>
             <!-- Display  Waiting-->
             <div id="1stwaiting_message" class="hidden text-white text-[24px] font-bold">COMING SOON</div>
-
-
 
         </div>
 
@@ -87,21 +76,11 @@
             </div>
             <div id="second_round_time" class="text-white hidden p-2 whitespace-normal"></div>
             <!-- Display Timer -->
-            <div class="flex flex-col 2nd-round">
-                <div id="count_down" class=" flex flex-row justify-center items-center space-x-2">
-                    <div id="2ndhour0">0</div>
-                    <div id="2ndhour1">0</div>
-                    <div>:</div>
-                    <div id="2ndmin0">0</div>
-                    <div id="2ndmin1">0</div>
-                    <div>:</div>
-                    <div id="2ndsec2">0</div>
-                    <div id="2ndsec02">0</div>
-                </div>
+            <div class="flex flex-col second-round">
+
             </div>
             <!-- Display  Waiting-->
             <div id="waiting_message" class="hidden text-white text-[24px] font-bold">Loading ..</div>
-
         </div>
 
 
@@ -139,6 +118,7 @@
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     {% for daily in result|slice:':10' %}
+                                    {% if daily.status == 'publish' %}
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
@@ -146,13 +126,18 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
+                                            {% if daily.first_round.result_time <= currentTime %}
                                             {{daily.first_round.winning_number}}
+                                            {% endif %}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
+                                            {% if daily.second_round.result_time <= currentTime %}
                                             {{daily.second_round.winning_number}}
+                                            {% endif %}
                                         </td>
 
                                     </tr>
+                                    {% endif %}
                                     {% endfor %}
 
                                     <!-- More people... -->
@@ -188,23 +173,14 @@
             class="h-auto w-full z-10 p-4 sm:h-[500px] sm:w-[500px] bg-[#000080] flex flex-col justify-center items-center shadow-2xl">
 
             <!-- Result Number -->
-            <div id="sundayresultHeading" class="text-white text-2xl"></div>
-            <div id="sundayResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">
+            <div id="starBallresultHeading" class="text-white text-2xl"></div>
+            <div id="starBallResultNumber" class="shadow_blur hidden text-[100px] sm:text-[200px] text-white font-bold">
             </div>
-            <div id="sunday_date_time" class="text-white text-center hidden">
+            <div id="starBall_date_time" class="text-white text-center hidden">
             </div>
             <!-- Display Timer -->
-            <div class="flex-col  sunday_result_timer_sction">
-                <div id="count_down" class="flex flex-row justify-center items-center space-x-2">
-                    <div id="sundayhour0">0</div>
-                    <div id="sundayhour1">0</div>
-                    <div>:</div>
-                    <div id="sundaymin0">0</div>
-                    <div id="sundaymin1">0</div>
-                    <div>:</div>
-                    <div id="sundaysec0">0</div>
-                    <div id="sundaysec1">0</div>
-                </div>
+            <div class="flex-col  starball_result_timer">
+
             </div>
             <!-- Display  Waiting-->
             <div id="sundayWaitingMessage" class="hidden text-white text-[24px] font-bold"></div>
@@ -246,7 +222,12 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap sunday_winning_number_history">
+                                            {% if obj.result_time <= currentTime %}
                                             {{obj.winning_number}}
+                                            {% endif %}
+
+
+
                                         </td>
                                     </tr>
                                     {% endfor %}
@@ -269,6 +250,10 @@
 
 </div>
 
+<script type="text/javascript" src="{% static 'js/starBall.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/firstRound.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/secondRound.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
 
 
 {% endblock %}

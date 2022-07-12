@@ -19,7 +19,6 @@ class FirstRound(models.Model):
 class SecondRound(models.Model):
     result_time = models.DateTimeField(blank=True, null=True)
     winning_number = models.PositiveIntegerField(null=True, blank=True)
-    
     def __str__(self):
         return str(self.winning_number)
 

@@ -36,6 +36,7 @@
                                 </thead>
                                 <tbody class="bg-white divide-y divide-gray-200">
                                     {% for daily in dailyResult %}
+                                    {% if daily.status == 'publish' %}
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
@@ -43,13 +44,18 @@
                                             </div>
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap daily_first_round_history">
+                                            {% if daily.first_round.result_time <= currentTime %}
                                             {{daily.first_round.winning_number}}
+                                            {% endif %}
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap  daily_second_round_history">
+                                            {% if daily.second_round.result_time <= currentTime %}
                                             {{daily.second_round.winning_number}}
+                                            {% endif %}
                                         </td>
 
                                     </tr>
+                                    {% endif %}
                                     {% endfor %}
 
                                     <!-- More people... -->
