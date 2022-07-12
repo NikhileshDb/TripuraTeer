@@ -1,6 +1,6 @@
 from rest_framework import viewsets
 from .serializers import FirstRoundSerializer, SecondRoundSerializer, SundayResultSerializer, WednesdayResultSerializer, DailyResultSerializer
-from daily.models import FirstRound, SecondRound
+from daily.models import FirstRound, SecondRound, DailyResult
 from sunday.models import SundayResult
 from sunday.models import StarBallGame
 from wednesday.models import WednesdayResult
