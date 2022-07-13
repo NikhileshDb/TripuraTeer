@@ -709,8 +709,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   width: 300px;
 }
 
-.w-\[28px\] {
-  width: 28px;
+.w-\[20px\] {
+  width: 20px;
 }
 
 .min-w-full {
@@ -871,6 +871,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(53 7 43 / var(--tw-bg-opacity));
 }
 
+.bg-gray-400 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(156 163 175 / var(--tw-bg-opacity));
+}
+
 .bg-\[\#320428\] {
   --tw-bg-opacity: 1;
   background-color: rgb(50 4 40 / var(--tw-bg-opacity));
@@ -903,10 +908,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
 }
 
-.bg-gradient-to-r {
-  background-image: linear-gradient(to right, var(--tw-gradient-stops));
-}
-
 .bg-\[url\(\'\.\.\/\.\.\/static\/images\/bg\.png\'\)\] {
   background-image: url('../../static/images/bg.png');
 }
@@ -916,21 +917,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(75 4 60 / 0));
 }
 
-.from-\[\#27263e\] {
-  --tw-gradient-from: #27263e;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgb(39 38 62 / 0));
-}
-
-.via-\[\#1f0780\] {
-  --tw-gradient-stops: var(--tw-gradient-from), #1f0780, var(--tw-gradient-to, rgb(31 7 128 / 0));
-}
-
 .to-\[\#7e0763\] {
   --tw-gradient-to: #7e0763;
-}
-
-.to-\[\#2b2a4f\] {
-  --tw-gradient-to: #2b2a4f;
 }
 
 .bg-cover {
@@ -1039,9 +1027,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding-bottom: 0.25rem;
 }
 
-.py-\[10px\] {
-  padding-top: 10px;
-  padding-bottom: 10px;
+.px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.py-\[200px\] {
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 
 .pb-10 {
@@ -1062,10 +1055,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .pt-\[150px\] {
   padding-top: 150px;
-}
-
-.pb-\[200px\] {
-  padding-bottom: 200px;
 }
 
 .pb-20 {
@@ -1280,59 +1269,59 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 #overlay {
   opacity: 100;
-  -webkit-animation: fade 2s ease-out 1s 1;
-          animation: fade 2s ease-out 1s 1;
+  -webkit-animation: fade 1s ease-out 1s 1;
+          animation: fade 1s ease-out 1s 1;
 }
 
 @-webkit-keyframes fade {
   from {
-    opacity:100;
+    opacity: 100;
   }
 
   to {
-    opacity:0;
+    opacity: 0;
   }
 }
 
 @keyframes fade {
   from {
-    opacity:100;
+    opacity: 100;
   }
 
   to {
-    opacity:0;
+    opacity: 0;
   }
 }
 
 /* mycustom */
 
 .shadow_blur {
-  text-shadow: 0px 0px 10px  rgb(255, 255, 255) ;
+  text-shadow: 0px 0px 10px rgb(255, 255, 255);
 }
 
 #count_down div {
-  font-size:80px;
+  font-size: 80px;
   color: white;
   font-weight: bold;
-  text-shadow: 1px 1px 20px  black ;
+  text-shadow: 1px 1px 20px black;
 }
 
-@media only screen and (max-width:600px){
+@media only screen and (max-width:600px) {
   #count_down div {
-    font-size:34px;
+    font-size: 34px;
   }
 }
 
 /* My Dice Css Styles */
 
-.container{
+.container {
   perspective: 1000px;
   perspective-origin: 50% 50%;
   font-family: 'fontawesome';
   height: 300px;
 }
 
-.container .cube{
+.container .cube {
   position: relative;
   left: 45%;
   top: 40%;
@@ -1343,50 +1332,50 @@ Ensure the default browser behavior of the `hidden` attribute.
   transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
 }
 
-.container .cube div{
+.container .cube div {
   position: absolute;
   box-sizing: border-box;
   padding: 10px;
   height: 100%;
   width: 100%;
-  border:2px solid #eee;
+  border: 2px solid #eee;
   color: #fff;
 }
 
-.container .cube div span{
+.container .cube div span {
   font-size: 32px;
   font-family: 'fontawesome';
 }
 
-.container .cube .front{
+.container .cube .front {
   background: #320428;
   transform: translateZ(100px);
 }
 
-.container .cube .back{
+.container .cube .back {
   background: #320428;
   transform: translateZ(-100px) rotateY(180deg);
 }
 
-.container .cube .right{
+.container .cube .right {
   background: #320428;
   transform-origin: top right;
   transform: rotateY(-270deg) translateX(100px);
 }
 
-.container .cube .left{
+.container .cube .left {
   background: #320428;
   transform-origin: center left;
   transform: rotateY(270deg) translateX(-100px);
 }
 
-.container .cube .top{
+.container .cube .top {
   background: #320428;
   transform-origin: top center;
   transform: rotateX(-270deg) translateY(-100px);
 }
 
-.container .cube .bottom{
+.container .cube .bottom {
   background: #320428;
   transform-origin: bottom center;
   transform: rotateX(270deg) translateY(100px);
@@ -1394,101 +1383,104 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 /*DOT ALIGNMENT */
 
-.container .cube .front span,.container .cube .left span:nth-child(1),
-  .container .cube .right span:nth-child(1){
+.container .cube .front span,
+.container .cube .left span:nth-child(1),
+.container .cube .right span:nth-child(1) {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 
-.container .cube .top span:nth-child(1),.container .cube .left span:nth-child(2),
-  .container .cube .right span:nth-child(2),
-  .container .cube .bottom span:nth-child(1){
+.container .cube .top span:nth-child(1),
+.container .cube .left span:nth-child(2),
+.container .cube .right span:nth-child(2),
+.container .cube .bottom span:nth-child(1) {
   position: absolute;
   top: 35px;
   left: 35px;
 }
 
-.container .cube .top span:nth-child(2),.container .cube .left span:nth-child(3),
-  .container .cube .right span:nth-child(3),
-  .container .cube .bottom span:nth-child(2){
+.container .cube .top span:nth-child(2),
+.container .cube .left span:nth-child(3),
+.container .cube .right span:nth-child(3),
+.container .cube .bottom span:nth-child(2) {
   position: absolute;
   bottom: 35px;
   right: 35px;
 }
 
 .container .cube .right span:nth-child(4),
-  .container .cube .bottom span:nth-child(3){
+.container .cube .bottom span:nth-child(3) {
   position: absolute;
   top: 35px;
   right: 35px;
 }
 
 .container .cube .right span:nth-child(5),
-  .container .cube .bottom span:nth-child(4){
+.container .cube .bottom span:nth-child(4) {
   position: absolute;
   bottom: 35px;
   left: 35px;
 }
 
-.container .cube .back pre{
+.container .cube .back pre {
   font-size: 32px;
   font-family: 'fontawesome';
   margin: 0;
 }
 
-.container .cube .back .firstPre{
+.container .cube .back .firstPre {
   position: absolute;
   top: 45px;
   left: 26px;
 }
 
-.container .cube .back .secondPre{
+.container .cube .back .secondPre {
   position: absolute;
   bottom: 45px;
   right: 26px;
 }
 
 @-webkit-keyframes animate {
-  25%{
+  25% {
     transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
     top: 0%;
   }
 
-  50%{
+  50% {
     transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
     top: 30%;
   }
 
-  75%{
+  75% {
     transform: rotateX(276deg) rotateY(256deg) rotateZ(246deg);
     top: 45%;
   }
 
-  100%{
+  100% {
     transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
     top: 60%;
   }
 }
 
 @keyframes animate {
-  25%{
+  25% {
     transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
     top: 0%;
   }
 
-  50%{
+  50% {
     transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
     top: 30%;
   }
 
-  75%{
+  75% {
     transform: rotateX(276deg) rotateY(256deg) rotateZ(246deg);
     top: 45%;
   }
 
-  100%{
+  100% {
     transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
     top: 60%;
   }
@@ -1614,14 +1606,18 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 18%;
   }
 
+  .sm\:py-\[10px\] {
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
   .sm\:px-\[50px\] {
     padding-left: 50px;
     padding-right: 50px;
   }
 
-  .sm\:py-\[10px\] {
-    padding-top: 10px;
-    padding-bottom: 10px;
+  .sm\:pb-\[200px\] {
+    padding-bottom: 200px;
   }
 
   .sm\:pt-\[0\] {
@@ -1656,4 +1652,3 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-right: 2rem;
   }
 }
-  
