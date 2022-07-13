@@ -68,7 +68,7 @@ fetch(api_url).then((res) => res.json())
             document.querySelector('#secondRoundResult').textContent = result.winning_number;
             let secondRoundTime = new Date(result.result_time);
             document.querySelector('#second_round_time').textContent = secondRoundTime.toLocaleString();
-            document.querySelector('#sec_round_heading').textContent = "FIRST ROUND";
+            document.querySelector('#sec_round_heading').textContent = "SECOND ROUND";
             app.classList.add('hidden');
         }
 
