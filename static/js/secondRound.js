@@ -15,8 +15,8 @@ fetch(api_url).then((res) => res.json())
 
         // creating render methode for countdown class
         const render = (time) => {
-            document.querySelector('#sec_round_heading').classList.remove('hidden');
-            document.querySelector('#sec_round_heading').textContent = 'TIME REMAINING';
+            document.querySelector('#second_round_heading').classList.remove('hidden');
+            document.querySelector('#second_round_heading').textContent = 'TIME REMAINING';
             app.innerHTML = `
               <div id="count_down" class="flex flex-row justify-center items-center space-x-2">
                 <div>${format(time.hours)}</div>
@@ -32,11 +32,11 @@ fetch(api_url).then((res) => res.json())
         const showMessage = () => {
             document.querySelector('#secondRoundResult').classList.remove('hidden');
             document.querySelector('#second_round_time').classList.remove('hidden');
-            document.querySelector('#sec_round_heading').classList.remove('hidden');
+            document.querySelector('#second_round_heading').classList.remove('hidden');
             document.querySelector('#secondRoundResult').textContent = result.winning_number;
             let secondRoundTime = new Date(result.result_time);
             document.querySelector('#second_round_time').textContent = secondRoundTime.toLocaleString();
-            document.querySelector('#sec_round_heading').textContent = "SECOND ROUND";
+            document.querySelector('#second_round_heading').textContent = "SECOND ROUND";
             app.classList.add('hidden');
         }
 
@@ -64,11 +64,11 @@ fetch(api_url).then((res) => res.json())
         if (remainingTime < 0) {
             document.querySelector('#secondRoundResult').classList.remove('hidden');
             document.querySelector('#second_round_time').classList.remove('hidden');
-            document.querySelector('#sec_round_heading').classList.remove('hidden');
+            document.querySelector('#second_round_heading').classList.remove('hidden');
             document.querySelector('#secondRoundResult').textContent = result.winning_number;
             let secondRoundTime = new Date(result.result_time);
             document.querySelector('#second_round_time').textContent = secondRoundTime.toLocaleString();
-            document.querySelector('#sec_round_heading').textContent = "SECOND ROUND";
+            document.querySelector('#second_round_heading').textContent = "SECOND ROUND";
             app.classList.add('hidden');
         }
 
