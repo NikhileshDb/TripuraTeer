@@ -32,6 +32,7 @@ urlpatterns = [
     path('wednesday/', include('wednesday.urls')),
     path('api/', include('api_provider.api_urls')),
     path('dice/', TemplateView.as_view(template_name="components/dice.html")),
+    path('privacy-policy/', TemplateView.as_view(template_name="frontend/privacy_policy.html"), name="privacy-policy"),
     path('about/', TemplateView.as_view(template_name="frontend/about_page.html"), name="about"),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name="sitemap"
    )
