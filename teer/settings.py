@@ -124,9 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-STATIC_URL = '/static/'
+STATIC_URL = 'static/'
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static')
 ]
 
 # Default primary key field type
@@ -140,4 +140,4 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CSRF_TRUSTED_ORIGINS = ['https://tripurateertoday.com', 'http://tripurateertoday.com']
+CSRF_TRUSTED_ORIGINS = ['https://tripurateertoday.com', 'http://tripurateertoday.com', 'http://127.0.0.1']
