@@ -12,7 +12,7 @@ def DailyHomePage(request):
     result = DailyResult.objects.all().order_by('-id')
     # sunday = SundayResult.objects.all().order_by('-id')
     sunday = StarBallGame.objects.all().order_by('-id')
-    common_number = CommonNumber.objects.all().order_by('-id')[0]
+    common_number = CommonNumber.objects.all().order_by('-id')[:1]
     context = {
         'result': result,
         'sunday': sunday,
