@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import DailyResult, FirstRound, SecondRound
+from .models import DailyResult, FirstRound, SecondRound, CommonNumber
 
 
 
@@ -8,7 +8,7 @@ admin.site.empty_value_display = '(Not Updated)'
 
 
 
-
+admin.site.register(CommonNumber)
 
 
 @admin.register(DailyResult)

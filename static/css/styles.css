@@ -695,6 +695,18 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: auto;
 }
 
+.h-\[400px\] {
+  height: 400px;
+}
+
+.h-\[50\%\] {
+  height: 50%;
+}
+
+.h-\[60\%\] {
+  height: 60%;
+}
+
 .h-\[50px\] {
   height: 50px;
 }
@@ -918,6 +930,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: #00000080;
 }
 
+.bg-blue-500 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
+}
+
 .bg-blue-700 {
   --tw-bg-opacity: 1;
   background-color: rgb(29 78 216 / var(--tw-bg-opacity));
@@ -980,6 +997,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-8 {
+  padding: 2rem;
 }
 
 .p-\[50px\] {
@@ -1527,11 +1548,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(213 129 7 / var(--tw-bg-opacity));
 }
 
-.hover\:bg-green-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(21 128 61 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-green-600:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(22 163 74 / var(--tw-bg-opacity));
@@ -1605,6 +1621,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:w-\[500px\] {
     width: 500px;
+  }
+
+  .sm\:w-\[400px\] {
+    width: 400px;
   }
 
   .sm\:w-auto {

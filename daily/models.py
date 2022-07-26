@@ -60,5 +60,12 @@ class DailyResult(models.Model):
      
     
     
+class CommonNumber(models.Model):
+    house = models.CharField(max_length=100, blank=True, null=True)
+    ending = models.CharField(max_length = 100, null=True, blank=True)
+    direct = models.CharField(max_length=100, blank=True, null=True)
+    date = models.DateTimeField(null=True, blank=True)
 
+    def __str__(self):
+        return str(self.date)
 
