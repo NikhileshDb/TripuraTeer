@@ -1,6 +1,13 @@
-api_url = `${root_url}/api/second-round/`;
+// const api_url = window.location.origin
+api_url = `${root_url}/new-api/second-round/`;
 
-fetch(api_url).then((res) => res.json())
+fetch(api_url, {
+        methode: 'get',
+        credentials: 'same-origin',
+        headers: {
+            'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
+        }
+    }).then((res) => res.json())
     .then((res) => {
         return res[0];
     }).then((result) => {

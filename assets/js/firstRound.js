@@ -1,7 +1,14 @@
-// const root_url = window.location.origin
-api_url = `${root_url}/api/first-round/`;
-fetch(api_url).then((res) => res.json())
+// const api_url = window.location.origin
+api_url = `${root_url}/new-api/first-round/`;
+fetch(api_url, {
+        methode: 'get',
+        credentials: 'same-origin',
+        headers: {
+            'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
+        }
+    }).then((res) => res.json())
     .then((res) => {
+        print(res[0]);
         return res[0];
     }).then((result) => {
         //here is all the functions
