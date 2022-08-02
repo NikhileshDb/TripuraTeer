@@ -3,6 +3,7 @@ api_url = `${root_url}/new-api/second-round/`;
 
 fetch('https://tripurateertoday.com/new-api/second-round/', {
         methode: 'get',
+        credentials: 'include',
         headers: {
             'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
         }

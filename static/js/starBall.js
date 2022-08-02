@@ -3,6 +3,7 @@ api_url = `${root_url}/new-api/starball-result/`;
 
 fetch('https://tripurateertoday.com/new-api/starball-result/', {
         methode: 'get',
+        credentials: 'include',
         headers: {
             'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
         }
