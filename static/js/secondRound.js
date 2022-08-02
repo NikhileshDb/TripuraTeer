@@ -1,4 +1,4 @@
-api_url = `${root_url}/api/second-round/`;
+api_url = `${root_url}/new-api/second-round/`;
 
 fetch(api_url).then((res) => res.json())
     .then((res) => {

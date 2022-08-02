@@ -1,5 +1,5 @@
 // const root_url = window.location.origin
-api_url = `${root_url}/api/first-round/`;
+api_url = `${root_url}/new-api/first-round/`;
 fetch(api_url).then((res) => res.json())
     .then((res) => {
         return res[0];

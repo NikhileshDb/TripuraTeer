@@ -1,5 +1,5 @@
 const root_url = window.location.origin
-api_url = `${root_url}/api/starball-result/`;
+api_url = `${root_url}/new-api/starball-result/`;
 
 fetch(api_url).then((res) => res.json())
     .then((res) => {
