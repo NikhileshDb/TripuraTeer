@@ -9,6 +9,8 @@ from django.contrib.sitemaps import GenericSitemap
 from daily.models import DailyResult
 from .sitemaps import StaticSiteMap
 
+from rest_framework.authtoken.views import obtain_auth_token
+
 sitemaps = {
     'static': StaticSiteMap
 }
@@ -33,6 +35,7 @@ urlpatterns = [
     path('sunday/', include('sunday.urls')),
     path('wednesday/', include('wednesday.urls')),
     path('new-api/', include('api_provider.api_urls')),
+    path('obtain-token', obtain_auth_token, name="obtain-token"),
     path('dice/', TemplateView.as_view(template_name="components/dice.html")),
     path('privacy-policy/', TemplateView.as_view(
         template_name="frontend/privacy_policy.html"), name="privacy-policy"),

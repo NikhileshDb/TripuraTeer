@@ -13,7 +13,8 @@ SECRET_KEY = 'django-insecure-ilt3slt=u7hcwmiepvq@jg$*qpluv%p1&%*h79*xe1=ma)cz)w
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1', 'tripurateertoday.com', 'www.tripurateertoday.com']
+ALLOWED_HOSTS = ['127.0.0.1', 'tripurateertoday.com',
+                 'www.tripurateertoday.com']
 
 # '194.163.43.110'
 # Application definition
@@ -29,9 +30,20 @@ INSTALLED_APPS = [
     'sunday',
     'wednesday',
     'rest_framework',
+    'rest_framework.authtoken',
     "corsheaders",
     'django.contrib.sitemaps',
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': (
+        'rest_framework.permissions.IsAuthenticated',
+    ),
+
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -78,14 +90,13 @@ WSGI_APPLICATION = 'teer.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME':'tripurateertodaydatabase',
+        'NAME': 'tripurateertodaydatabase',
         'USER': 'tripurateertodayadmin',
-        'PASSWORD': 'password@12345', 
+        'PASSWORD': 'password@12345',
         'HOST': '37.44.244.212',
         'PORT': '5432',
     }
 }
-
 
 
 # Password validation
@@ -113,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 LANGUAGE_CODE = 'en-us'
 
 
-TIME_ZONE = 'Asia/Kolkata' 
+TIME_ZONE = 'Asia/Kolkata'
 
 USE_I18N = True
 USE_L10N = True
@@ -134,10 +145,11 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-MEDIA_URL= '/media/'
+MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 CORS_ALLOW_ALL_ORIGINS = True
 
-CSRF_TRUSTED_ORIGINS = ['https://tripurateertoday.com', 'http://tripurateertoday.com', 'http://127.0.0.1']
+CSRF_TRUSTED_ORIGINS = ['https://tripurateertoday.com',
+                        'http://tripurateertoday.com', 'http://127.0.0.1']
