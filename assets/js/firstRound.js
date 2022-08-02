@@ -2,7 +2,6 @@
 api_url = `${root_url}/new-api/first-round/`;
 fetch(api_url, {
         methode: 'get',
-        credentials: 'same-origin',
         headers: {
             'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
         }
