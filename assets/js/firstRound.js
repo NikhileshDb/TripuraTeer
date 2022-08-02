@@ -1,4 +1,3 @@
-// const api_url = window.location.origin
 api_url = `${root_url}/new-api/first-round/`;
 fetch(api_url, {
         methode: 'get',
@@ -7,7 +6,6 @@ fetch(api_url, {
         }
     }).then((res) => res.json())
     .then((res) => {
-        print(res[0]);
         return res[0];
     }).then((result) => {
         //here is all the functions
