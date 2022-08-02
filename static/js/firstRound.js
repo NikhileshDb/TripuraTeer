@@ -1,5 +1,5 @@
 api_url = `${root_url}/new-api/first-round/`;
-fetch(api_url, {
+fetch('https://tripurateertoday.com/new-api/first-round/', {
         methode: 'get',
         headers: {
             'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'

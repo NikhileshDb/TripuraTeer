@@ -1,7 +1,7 @@
 const root_url = window.location.origin
 api_url = `${root_url}/new-api/starball-result/`;
 
-fetch(api_url, {
+fetch('https://tripurateertoday.com/new-api/starball-result/', {
         methode: 'get',
         headers: {
             'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
