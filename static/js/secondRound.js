@@ -5,6 +5,7 @@ fetch('https://tripurateertoday.com/new-api/second-round/', {
         methode: 'get',
         credentials: 'include',
         headers: {
+            'Access-Control-Allow-Origin': "*",
             'Authorization': 'Token ' + 'd158cfae4529a8dfd09110846774b36b72d14021'
         }
     }).then((res) => res.json())
