@@ -224,7 +224,13 @@
                                         </td>
                                         <td class="px-6 py-4 whitespace-nowrap sunday_winning_number_history">
                                             {% if obj.result_time <= currentTime %}
+                                            {% if obj.winning_number <= 99 and obj.winning_number >= 10 %}
+                                            0{{obj.winning_number}}
+                                            {% elif obj.winning_number <= 9 %}
+                                            00{{obj.winning_number}}
+                                            {% else %}
                                             {{obj.winning_number}}
+                                            {% endif %}
                                             {% endif %}
                                         </td>
                                     </tr>
